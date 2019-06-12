@@ -1,6 +1,8 @@
 ## AWS Serverless Workshop Greater China Region
 
 AWS Serverless Workshop for Greater China Region
+ 
+AWS 无服务器沉浸日动手实验（中国区）  
 
 ## License Summary
 

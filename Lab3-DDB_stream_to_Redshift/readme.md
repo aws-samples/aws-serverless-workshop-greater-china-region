@@ -1,8 +1,9 @@
 # DynamoDB stream write to Redshift    
 
-(BETA Lab)    
 This lab is leverage DynamoDB stream trigger Lambda to write data into Redshift.  
-本实验是在数据持续写入 DynamoDB 的情况下，以 DynamoDB Stream 触发 Lambda，Lambda 获取Stream的数据，并写入 S3。然后 Redshift 从 S3 中加载数据。控制 Redshift 加载的命令可以选择以下4种的其中一种: Lambda被S3触发、Lambda定时触发、EC2定时任务、EMR定时任务合并文件然后下发COPY。选择要根据数据量的大小和频度。  
+本实验是在数据持续写入 DynamoDB 的情况下，以 DynamoDB Stream 触发 Lambda，Lambda 获取Stream的数据，并写入 S3，或者由 Kinesis Firehose 汇聚再写入 S3。然后 Redshift 从 S3 中加载数据。控制 Redshift 加载的命令可以选择以下的其中一种: Lambda被S3触发、Lambda定时触发、EC2定时任务、EMR定时任务合并文件然后下发COPY。选择要根据数据量的大小和频度。  
+  
+本实验是个开放性的 Lab，只提供了示例代码，需要实验者对 Lambda, Kinesis, S3 的机制有一定了解，并有较强动手能力。
 
 ![arch](./img/img1.png)
 
@@ -40,9 +41,13 @@ Lambda 配置为运行超时 1 分钟，配置 Lambda 的角色有权限进行�
 
 此时会看到 DynamoDB 有数据记录增加，S3 按每小时一个目录增加了对应的数据文件，每个文件几十Bytes到几KB不等。
 
+## 利用 Kinesis Firehose 聚合数据  
+
+在前一步骤中，每次 DynamoDB 增加数据都会触发 Lambda 写入一个文件到 S3 中，导致 S3 中有大量的碎片文件。对于大量数据持续增加的场景就不合适了，此时可以修改 Lambda 函数，把数据写入 Kinesis Firehose，由 Firehose 汇聚数据为较大的文件，例如每10分钟一个文件，或者每50MB一个文件，由Firehose 写入 S3。
+
 ## S3 数据加载到 Redshift 
 
-考虑数据量的大小和产生是否均衡来选择合适的下发加载命令的工具，随着数据写入速度增加，可以依次选择：  
+考虑数据量的大小和产生是否均衡来选择合适的下发加载命令的工具，随着数据写入速度增加，可以选择：  
 
 1. S3 新增一个文件就触发一个 Lambda 控制 Redshift 做加载  
 
@@ -57,10 +62,10 @@ Lambda 应能访问 Redshift 所以需要运行在 VPC 模式，配置跟 Redshi
 Lambda 配置为运行超时 15 分钟，配置 Lambda 的角色有权限进行：  
 * 写 CloudWatchLog
 * 访问 SSM
-  
-2. 定时任务触发 Lambda 每小时整点过几分钟，就执行一次加载前一小时的数据  
+   
+2. 定时任务触发 Lambda 每小时整点过几分钟，就执行一次从 S3 加载前一小时的数据到 Redshift   
 
-数据量相对小，加载的过程确保在15分钟之内是可以完成的。参考代码：  
+适合数据量不是太大，加载的过程确保在15分钟之内是可以完成的。参考代码：  
 
 [Lambda_redshift_load_s3-cronMode.py](./Lambda_redshift_load_s3-cronMode.py)
 
@@ -68,7 +73,7 @@ Lambda 配置为运行超时 15 分钟，配置 Lambda 的角色有权限进行�
    
 3. EC2上跑定时任务  
 
-能够长时间运行，控制Redshift进行定时的数据加载，每小时，或者每天执行一次加载数据
+能够长时间运行，控制 Redshift 进行定时的数据加载，每小时，或者每天执行一次加载数据。但要考虑这个 EC2 的高可用问题，起码应该设置 AutoRecover。
 
 4. 启动EMR，运行S3distcp组件，合并每小时的所有碎片文件数据为一个大的文件  
 

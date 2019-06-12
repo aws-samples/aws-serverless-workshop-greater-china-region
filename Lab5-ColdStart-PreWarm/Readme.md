@@ -1,4 +1,4 @@
-# AWS Lambda pre-warm 示例
+# AWS Lambda 预热
 This is a sample code of how to migitate Lambda cold start by leverage pre-warm.  
 对于 Lambda 冷启动时间比较长的场景，例如 Lambda 运行在 VPC 中，因为冷启动的时候需要附加一个 ENI，所以启动时间会长。另外 Java 和 C# 语言本身启动时间也会相对长些。需要考虑进行定时预热，即每个一段时间用一个 CloudWatch 定时任务触发一个预热用的 Lambda ，由这个 Lambda 去调用被预热的 Lambda。对于在 VPC 中的场景，预热周期建议设置15分钟，非 VPC 的Lambda，预热建议设置5分钟一次。    
 说明：

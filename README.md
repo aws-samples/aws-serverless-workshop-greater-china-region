@@ -18,8 +18,6 @@ AWS 无服务器沉浸日动手实验（中国区）
 * Lab5 AWS Lambda 预热
   对于 Lambda 冷启动时间比较长的场景进行定时预热的示例
 
-* Lab6 StepFunction (under_construction)
-
 ## Lambda 的注意事项
 
 * Lambda 角色权限生效时间的问题  

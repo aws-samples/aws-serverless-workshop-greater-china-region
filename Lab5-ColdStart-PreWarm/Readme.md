@@ -40,8 +40,10 @@ This is a sample code of how to migitate Lambda cold start by leverage pre-warm.
     };
   
 
-注：对于生产级大规模的项目，pre-warm的比较工程化的代码实现请参考  
+注：对于生产环境，设置并发的数量 concurrent_num 应该放在Lambda的环境变量中，便于调整。  
+对于生产级大规模的项目，pre-warm的比较工程化的代码实现请参考  
 https://github.com/jeremydaly/lambda-warmer  
+
 
 ## 设置 CloudWatch 定时任务
 在 CloudWatch 中创建一个定时任务，定时触发预热 Lambda 函数，触发目标选择 Lambda 以及选择对应的预热函数。

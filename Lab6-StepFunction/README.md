@@ -8,17 +8,17 @@
 
 
 ## 前提条件
-- 本文实验基于AWS中国区宁夏区(cn-northwest-1)作示例。所有控制台链接均直接连接到北京区console。如使用海外区账号，请不要点击此直达连接，在global控制台选择相应产品即可。
-- 如果您使用的是AWS中国区账号，账号默认屏蔽了80,8080,443三个端口，需要先申请打开443端口才可以正常使用API Gateway的服务。如果是海外账号，没有此限制。
-- 如何判断自己的账号是中国区账号还是海外区账号？请查看自己的控制台链接，console.amazonaws.cn为中国区，console.aws.amazon.com为海外区账号。
+- 本文实验基于AWS中国宁夏区(cn-northwest-1)作示例。所有控制台链接均直接连接到中国区 Console。如使用海外区账号，请不要点击此直达连接，在 Global 控制台选择相应产品即可。
+- 如果您使用的是 AWS 中国区账号，按中国法规要求账号默认屏蔽了 80,8080,443 三个端口，需要先做 ICP备案 打开 443 端口才可以正常使用 API Gateway 的服务。如果是海外账号，没有此限制。
+- 如何判断自己的账号是中国区账号还是 Global 区账号？请查看自己的控制台链接，console.amazonaws.cn 为中国区，console.aws.amazon.com 为 Global 区账号。
 - 在`Identiy Access Management`服务中创建一个本次实验需要用到的`AWS Lambda`服务角色，包含本次实验需要使用到的服务权限。角色包含如下四个托管的策略
   - AmazonDynamoDBFullAccess
   - AWSLambdaBasicExecutionRole
   - AmazonSNSFullAccess
   - AWSStepFunctionsFullAccess
   
-具体的角色创建流程，可以参考如下连接
-[AWS Lambda Execution Role](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html)
+具体的角色创建流程，可以参考如下连接  
+[AWS Lambda Execution Role](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html)  
 [Creating a Role to Delegate Permissions to an AWS Service](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html)
 
 
@@ -31,7 +31,7 @@
 
 ## 详细步骤
 
-### 创建AWS Step Functions 状态机
+### 创建 AWS Step Functions 状态机
 
 1. 进入AWS控制台，在`服务`中搜索`Step Functions`
 2. 进入`Step Functions`服务后，点击左侧的活动栏，并点击`状态机`
@@ -168,7 +168,7 @@
 7. 在`配置设置`下，选择`为我创建IAM角色`, 输入自定义的IAM角色名称`MyStepFunctionsExecutionRole`
 8. 点击`创建状态机`完成创建过程
 
-### 创建AWS Lambda任务
+### 创建AWS Lambda 任务
 为了实现`Step Functions`状态机流转下的任务，我们这次实现会用到`AWS Lambda`作为我们业务的实现环境
 
 1. 进入AWS控制台，选择`服务`然后输入`Lambda`进入`AWS Lambda`控制台
@@ -311,8 +311,8 @@ def lambda_handler(event, context):
 ```
 保存成功后复制页面右上角的`ARN`，替换原`Step Functions`状态机定义下的`<RecordWinners:ARN>`
 
-### 创建AWS SNS 通知服务
-1. 进入AWS控制台，在`服务`中搜索`SNS`
+### 创建 AWS SNS 通知服务
+1. 进入 AWS 控制台，在`服务`中搜索`SNS`
 2. 在`SNS`控制面板中，选择`主题`, 然后选择`创建主题`
 3. 在`创建新主题`弹框中，输入
   - 主题名称: `Lottery-Notification`
@@ -325,10 +325,10 @@ def lambda_handler(event, context):
 7. 复制主题详细页面的`主题ARN`，替换`Step Functions`状态机下的`<Notification:ARN>`
 
 
-### 创建Amazon Dynamodb 服务
+### 创建 Amazon Dynamodb 服务
 本次实验需要创建两张`Dynamodb`表来记录员工信息和幸运儿信息。使用`Dynamodb`能更快地通过托管的方式记录数据同时免去数据库运维的压力。
 
-1. 进入AWS控制台，在`服务`中搜索`Dynamodb`
+1. 进入 AWS 控制台，在`服务`中搜索`Dynamodb`
 2. 在左侧控制栏中选在`表`, 然后在主页面中选择`创建表`
 3. 在`创建Dynamodb表`中，填入如下信息
    - 表名称：`Lottery-Winners`
@@ -347,7 +347,7 @@ $ aws dynamodb batch-write-item --request-items file://request-items.json
    - 索引名称：`lottery_serial-index`
 
 ### 执行 Step Functions 状态机
-1. 进入AWS控制台，在`服务`中搜索`Step Functions`
+1. 进入 AWS 控制台，在`服务`中搜索`Step Functions`
 2. 进入之前创建的状态机`Lottery`
 3. 点击`启动执行`
 4. 在弹框中填入输入的`json` 文本，这里的`input`代表在本次实验中需要抽取的获奖人数
@@ -360,13 +360,13 @@ $ aws dynamodb batch-write-item --request-items file://request-items.json
 
 ### 实验最终效果
 1. `Dynamodb`表中`Lottery-Winners`记录幸运儿
-2. 邮件会收取到辛运儿的信息
+2. 邮件会收取到幸运儿的信息
 
 ## 清除实验资源
-1. 删除Dynamodb 创建的表 `Lottery-Employee` 和 `Lottery-Winners`
+1. 删除 Dynamodb 创建的表 `Lottery-Employee` 和 `Lottery-Winners`
 2. 删除状态机 `Lottery`
 3. 删除Lambda函数
-4. 删除SNS主题`Lottery-Notification`
+4. 删除 SNS 主题`Lottery-Notification`
   
 ----------------------
 整理 by Feng, Jiasheng

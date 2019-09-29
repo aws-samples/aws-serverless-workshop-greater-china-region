@@ -1,0 +1,16 @@
+{
+  "name": "my-tdd-service",
+  "version": "1.0.0",
+  "description": "Example demonstrates how to setup a simple HTTP GET endpoint",
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha-simple-html-reporter": "^1.1.0",
+    "mochawesome": "^4.0.1",
+    "serverless-mocha-plugin": "^1.10.0"
+  },
+  "dependencies": {
+    "js-yaml": "^3.13.1",
+    "koa": "^2.7.0"
+  }
+}

@@ -1,0 +1,33 @@
+// Strict JSHint options for browser environments that use Browserify module
+// wrapping. Use more lenient options if you don't need to work with old
+// browsers (e.g. IE8-9).
+
+{
+    // Enforcing options
+    "bitwise": true,
+    "curly": true,
+    "eqeqeq": true,
+    "es3": true,
+    "forin": false,
+    "freeze": true,
+    "futurehostile": true,
+    "latedef": true,
+    "maxdepth": 10,
+    "maxparams": 4,
+    "noarg": true,
+    "nonbsp": true,
+    "nonew": true,
+    "notypeof": true,
+    "undef": true,
+    "unused": true,
+ 
+    // Relaxing options
+    // Due to Browserify use, use the 'node' mode rather than file level strict mode
+    //"strict": true,
+
+    // Environment options
+    "node": true,
+
+    // For tests
+    "predef": ["it", "describe"]
+}

@@ -1,0 +1,23 @@
+service: cicd-tdd
+
+frameworkVersion: ">=1.1.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: 'dev'
+  region: 'us-west-2'
+  apiName: cicd-serverless
+  deploymentBucket: techsummit2019
+  deploymentPrefix: serverless2019
+
+functions:
+  cicd1:
+    handler: handler.endpoint
+    events:
+      - http:
+          path: ping
+          method: get
+          cors: true
+plugins:
+  - serverless-mocha-plugin

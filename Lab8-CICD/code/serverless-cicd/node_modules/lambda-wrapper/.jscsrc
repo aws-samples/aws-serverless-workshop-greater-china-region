@@ -1,0 +1,7 @@
+{
+    "preset": "airbnb",
+    "validateIndentation": 4,
+    "requirePaddingNewLinesAfterBlocks": {
+   	"allExcept": ["inCallExpressions", "inArrayExpressions", "inProperties"]
+    }
+}

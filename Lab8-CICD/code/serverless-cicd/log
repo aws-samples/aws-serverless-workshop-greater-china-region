@@ -1,0 +1,30 @@
+codepipeline 不能输出yaml
+codebuild & Codedeploy 无法集成
+S3 输出需要有版本控制功能
+
+I've currently been struggling with the same issue.
+
+After some digging, I've found that it looks to be a limitation of linking the two services (codebuild and codedeploy) via codepipelines
+
+Currently codebuild only supports ZIP/TAR/TGZ as the bundletypes (outputs) which codedeploy doesnt support
+
+similar thread with an AWS response https://forums.aws.amazon.com/thread.jspa?messageID=864336
+
+A work around is to trigger the codedeploy via the codebuild::project buildspec. Example below
+
+export REVISION="revisionType=S3,s3Location{bucket=$BUCKET_DEPLOYMENTS,key=$CODEBUILD_BUILD_ID/appspec.yml,bundleType=YAML}"
+
+aws deploy create-deployment \
+    --application-name=$APPLICATION_NAME \
+    --deployment-group-name=$DEPLOYMENT_GROUP_NAME \ 
+    --revision=$REVISION \
+    --deployment-config-name='CodeDeployDefault.LambdaCanary10Percent30Minutes'
+
+    var bucket= event.bucket;
+    var key= event.path;
+    var bundleType='YAML';
+    var REVISION= `revisionType=S3,s3Location{bucket=${bucket},key=${key},bundleType=${bundleType}}`
+    var APPLICATION_NAME = event.APPLICATION_NAME;
+    var DEPLOYMENT_GROUP_NAME = event.DEPLOYMENT_GROUP_NAME;
+docker tag 78cd10d96f0c 852088822079.dkr.ecr.us-west-2.amazonaws.com/codebuild
+    aws deploy create-deployment --application-name=DeployProduction --deployment-group-name=LambdaAliasDeploy --revision=revisionType=S3,s3Location{bucket=techsummit2019,key=codedeploy/appspec.yaml,bundleType=YAML} --deployment-config-name='CodeDeployDefault.LambdaCanary10Percent30Minutes' --region us-west-2

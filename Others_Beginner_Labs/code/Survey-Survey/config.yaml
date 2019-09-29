@@ -1,0 +1,21 @@
+Title: Serverless Survey
+Author: Tomasz Stachlewski
+Image: https://a0.awsstatic.com/main/images/logos/aws_logo_smile_1200x630.png
+Theme: 282828
+Questions:
+    Question1:
+        Type: ShortText
+        Label: What is your email?
+    Question2:
+        Type: Text
+        Label: What do you think about this survey?
+    Question3:
+        Type: Radio
+        Label: Would you like to do it again?
+        Values:
+            Value1: Of course :)
+            Value2: I don't think so...
+            Value3: Maybe
+    Question4:
+        Type: Text
+        Label: What could be improved?

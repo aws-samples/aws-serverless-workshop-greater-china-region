@@ -1,0 +1,13 @@
+{
+    "ApplicationName": "sns2wechatinlambda",
+    "DeploymentMethod": "cloudformation",
+    "Functions": {
+        "sns2wechatinlambda": {
+            "PhysicalId": {
+                "us-east-1": "cloud9-sns2wechatinlambda-sns2wechatinlambda-15L3SOCG4025Z"
+            }
+        }
+    },
+    "RestApiId": "1vwvr1jfy8",
+    "StackName": "cloud9-sns2wechatinlambda"
+}

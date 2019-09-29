@@ -101,3 +101,6 @@ S3distcp 参考文件：https://docs.aws.amazon.com/zh_cn/emr/latest/ReleaseGuid
   1. 使用 StepFunction。由 StepFunction 触发启动 Lambda，读取 DDB 数据的同时在 Lambda 函数代码中监控运行的时间，超过 14 分钟，就结束函数并把最后获取到的 DDB 记录的 Key 关键字返回 StepFunction ，StepFunction 把 Key 再重新触发 Lambda 并传入参数 Key，Lambda 从这个 Key 后面开始继续读取。  
   StepFunction 是非常便利的状态机服务，云原生高可用，并可设置自动重试和超时等控制
   2. 对于方法1的一个变种，不使用 StepFunction，而使用一个独立的 DDB 表来做 StepFunction 的工作。Lambda 执行到14分钟就结束并把最后的 Key 写入到这个独立的DDB，DDB Stream 再触发 Lambda（自动带上了新写入的 Key ），Lambda 从收到的 Key 之后继续取 DDB 的数据
+    
+----------------------
+整理 by Huang, Zhuobin

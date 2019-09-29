@@ -1,0 +1,124 @@
+{
+  "Comment": "A simple AWS Step Functions state machine that simulates the lottery session",
+  "StartAt": "Input Lottery Winners",
+  "States": {
+    "Input Lottery Winners": {
+        "Type": "Task",
+        "Resource": "arn:aws:lambda:ap-southeast-1:<account-id>:function:Lottery-InputWinners",
+        "ResultPath": "$",
+        "Catch": [ 
+            {          
+              "ErrorEquals": [ "CustomError" ],
+              "Next": "Failed"      
+            },
+            {          
+              "ErrorEquals": [ "States.ALL" ],
+              "Next": "Failed"      
+            } 
+          ],
+        "Next": "Random Select Winners"
+    }, 
+    "Random Select Winners": {
+      "Type": "Task",
+      "InputPath": "$.body",
+      "Resource": "arn:aws:lambda:ap-southeast-1:<account-id>:function:Lottery-RandomSelectWinners",
+      "Catch": [ 
+        {          
+          "ErrorEquals": [ "States.ALL" ],
+          "Next": "Failed"      
+        } 
+      ],      
+     "Retry": [ 
+        {
+          "ErrorEquals": [ "States.ALL"],          
+          "IntervalSeconds": 1, 
+          "MaxAttempts": 2
+        } 
+      ],
+      "Next": "Validate Winners"
+    },
+    "Validate Winners": {
+      "Type": "Task",
+      "InputPath": "$.body",
+      "Resource": "arn:aws:lambda:ap-southeast-1:<account-id>:function:Lottery-ValidateWinners",
+      "Catch": [ 
+        {          
+          "ErrorEquals": [ "States.ALL" ],
+          "Next": "Failed"      
+        } 
+      ],      
+     "Retry": [ 
+        {
+          "ErrorEquals": [ "States.ALL"],          
+          "IntervalSeconds": 1, 
+          "MaxAttempts": 2
+        } 
+      ],
+      "Next": "Is Winner In Past Draw"
+    },
+    "Is Winner In Past Draw": {
+      "Type" : "Choice",
+        "Choices": [
+          {
+            "Variable": "$.status",
+            "NumericEquals": 0,
+            "Next": "Send SNS and Record In Dynamodb"
+          },
+          {
+            "Variable": "$.status",
+            "NumericEquals": 1,
+            "Next": "Random Select Winners"
+          }
+      ]
+    },
+    "Send SNS and Record In Dynamodb": {
+      "Type": "Parallel",
+      "End": true,
+      "Catch": [ 
+        {          
+          "ErrorEquals": [ "States.ALL" ],
+          "Next": "Failed"      
+        } 
+      ],      
+     "Retry": [ 
+        {
+          "ErrorEquals": [ "States.ALL"],          
+          "IntervalSeconds": 1, 
+          "MaxAttempts": 2
+        } 
+      ],
+      "Branches": [
+        {
+         "StartAt": "Notify Winners",
+         "States": {
+           "Notify Winners": {
+             "Type": "Task",
+             "Resource": "arn:aws:states:::sns:publish",
+             "Parameters": {
+               "TopicArn": "arn:aws:sns:ap-southeast-1:<account-id>:Lottery-Notification",
+               "Message.$": "$.body"
+             },
+             "End": true
+           }
+         }
+       },
+       {
+         "StartAt": "Record Winner Queue",
+         "States": {
+           "Record Winner Queue": {
+             "Type": "Task",
+             "InputPath": "$.body",
+             "Resource":
+               "arn:aws:lambda:ap-southeast-1:<account-id>:function:Lottery-RecordWinners",
+             "TimeoutSeconds": 300,
+             "End": true
+           }
+         }
+       }
+      ]
+    },
+    "Failed": {
+        "Type": "Fail"
+     }
+  }
+}

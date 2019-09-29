@@ -94,3 +94,6 @@ Cron表达式的写法可以[参考文档](https://docs.amazonaws.cn/AmazonCloud
 * 考虑更完善的处理保护，应该在代码中的几个 TODO 位置加上对执行失败的通知 SNS 调用，发邮件通知管理员。另外，再加配置 Lambda 的 DLQ （死信队列）对执行失败通知 SNS。（注意增加Lambda的SNS调用权限）
 * 查询 describe instance 的时候如果要考虑可能出现超过1000个匹配实例的情况的话，应该增加对返回结果 NextToken 的处理，以便获得完整的实例列表。
 * 在2018年4月，Create Snapshot 接口支持了打快照的同时就打上 Tag ，本项目的代码得益于此功能，得到简化。注意：在建Lambda执行角色的时候要配上 CreateTag 的权限。
+  
+----------------------
+整理 by Huang, Zhuobin

@@ -1,0 +1,104 @@
+{
+    "Lottery-Employee": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "employee_id": {"S": "001"},
+                    "employee_entry_date": {"S": "20190924"},
+                    "employee_name": {"S": "Rose"},
+                    "lottery_serial": {"N": "1"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "employee_id": {"S": "002"},
+                    "employee_entry_date": {"S": "20190924"},
+                    "employee_name": {"S": "Tracy"},
+                    "lottery_serial": {"N": "2"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "employee_id": {"S": "003"},
+                    "employee_entry_date": {"S": "20190924"},
+                    "employee_name": {"S": "Aaron"},
+                    "lottery_serial": {"N": "3"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "employee_id": {"S": "004"},
+                    "employee_entry_date": {"S": "20190924"},
+                    "employee_name": {"S": "Bob"},
+                    "lottery_serial": {"N": "4"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "employee_id": {"S": "005"},
+                    "employee_entry_date": {"S": "20190924"},
+                    "employee_name": {"S": "Yigal"},
+                    "lottery_serial": {"N": "5"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "employee_id": {"S": "006"},
+                    "employee_entry_date": {"S": "20190924"},
+                    "employee_name": {"S": "Uber"},
+                    "lottery_serial": {"N": "6"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "employee_id": {"S": "007"},
+                    "employee_entry_date": {"S": "20190924"},
+                    "employee_name": {"S": "Oscar"},
+                    "lottery_serial": {"N": "7"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "employee_id": {"S": "008"},
+                    "employee_entry_date": {"S": "20190924"},
+                    "employee_name": {"S": "Paul"},
+                    "lottery_serial": {"N": "8"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "employee_id": {"S": "009"},
+                    "employee_entry_date": {"S": "20190924"},
+                    "employee_name": {"S": "Ember"},
+                    "lottery_serial": {"N": "9"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "employee_id": {"S": "010"},
+                    "employee_entry_date": {"S": "20190924"},
+                    "employee_name": {"S": "Gary"},
+                    "lottery_serial": {"N": "10"}
+                }
+            }
+        }
+    ]
+}

@@ -116,3 +116,6 @@ def lambda_handler(event, context):
 * 为什么需要超时时间？
 * 什么情况下需要 VPC，Lambda运行在哪？
 * Lambda 支持什么开发语言？不在列表上的能支持吗？
+  
+----------------------
+整理 by Huang, Zhuobin

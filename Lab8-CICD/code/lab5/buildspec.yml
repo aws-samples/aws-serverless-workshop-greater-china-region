@@ -1,0 +1,33 @@
+# Do not change version. This is the version of aws buildspec, not the version of your buldspec file.
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+        python: 3.7
+    commands:
+      - echo pre Installing ...
+  pre_build:
+    commands:
+      - echo prebuild,Installing update ...
+      # 基本环境更新
+      #- yum update -y
+  build:
+    commands:
+      - echo Build started on `date`
+      - CurrentVersion=$(echo $(aws lambda get-alias --function-name v2 --name beta --region ap-southeast-1 | grep FunctionVersion | tail -1 |tr -cd "[0-9]"))
+  post_build:
+    commands:
+      - ls 
+      - mkdir build
+      - zip -r ./build/lambda.zip ./
+      - aws lambda update-function-code  --function-name v2   --region ap-southeast-1  --zip-file fileb://build/lambda.zip   --publish
+      - TargetVersion=$(echo $(aws lambda list-versions-by-function --function-name v2 --region ap-southeast-1 | grep Version | tail -1 | tr -cd "[0-9]"))
+      - echo $CurrentVersion
+      - echo $TargetVersion
+      - sed -e 's/{{CurrentVersion}}/'$CurrentVersion'/g' -e 's/{{TargetVersion}}/'$TargetVersion'/g' appspec.template.yaml > appspec.yaml
+      - aws s3 cp appspec.yaml s3://serverless-demo-sal/codedeploy/v2/appspec.yaml
+artifacts:
+  type: yaml
+  files:
+    - appspec.yaml

@@ -1,0 +1,11 @@
+version: 0.0
+# In the Resources section specify the name, alias,
+# target version, and (optional) the current version of your AWS Lambda function.
+Resources:
+  - v2: # Replace "MyFunction" with the name of your Lambda function
+      Type: AWS::Lambda::Function
+      Properties:
+        Name: "v2" # Specify the name of your Lambda function
+        Alias: "beta" # Specify the alias for your Lambda function
+        CurrentVersion: "{{CurrentVersion}}" # Specify the current version of your Lambda function
+        TargetVersion: "{{TargetVersion}}" # Specify the version of your Lambda function to deploy

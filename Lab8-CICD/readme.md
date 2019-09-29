@@ -63,11 +63,11 @@ Codebuild本来就有自己的代码环境，例如python，Java这些。但有�
    
 1. 下载sample code，sample code包含三个文件，说明如下。在上传之前，请确保已经替换相关参数，否则会build失败。
 
-   - [lambda_function.py](code/lab5/lambda_function.py) 为 lambda 基于python 2.7的程序代码，sample code中为基本的 hello word，可自定义代码。
+   - [lambda_function.py](code/lambda_function.py) 为 lambda 基于python 2.7的程序代码，sample code中为基本的 hello word，可自定义代码。
    
-   - [buildspec.yml](code/lab5/buildspec.yml) 为 codebuild 所需要的yaml配置文件，我们将利用此文件将新版本代码部署成一个新version，输出用于 codedeploy 的配置文件 appspec.yaml 放到S3 bucket当中。需要替换文件中的 **lambda function name, region code** 等信息。
+   - [buildspec.yml](code/buildspec.yml) 为 codebuild 所需要的yaml配置文件，我们将利用此文件将新版本代码部署成一个新version，输出用于 codedeploy 的配置文件 appspec.yaml 放到S3 bucket当中。需要替换文件中的 **lambda function name, region code** 等信息。
    
-   - [appspec.template.yaml](code/lab5/appspec.template.yaml) 为 codedeploy 所需要的配置文件模板，我们将利用此模板生成自己的 appsepc.yaml 文件。**需要替换 demo 为自己的 Lambda 函数名**， **alias替换为自己的 版本号别名** 。
+   - [appspec.template.yaml](code/appspec.template.yaml) 为 codedeploy 所需要的配置文件模板，我们将利用此模板生成自己的 appsepc.yaml 文件。**需要替换 demo 为自己的 Lambda 函数名**， **alias替换为自己的 版本号别名** 。
    
 1. 将自定义代码上传至codeCommit，上传后如图所示。
    ![](img/lab5-code-commit.png)
@@ -114,7 +114,7 @@ Codebuild本来就有自己的代码环境，例如python，Java这些。但有�
 
 本小节基于步骤四：CI， 进一步为pipeline添加 CD 流程，实现从 codeCommit 代码上传到 codebuild自动编译测试生成新版本，到 codedeploy 自动部署的流程。
 
-1. 新建 lambda function。python2.7, 比如起名为codedeploy。点击获取[用于pipeline的python代码](code/lab5/deploy4lambda.py), 自定义[deployConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html),也即流量转移策略。在sample code里，我们直接用了`
+1. 新建 lambda function。python2.7, 比如起名为codedeploy。点击获取[用于pipeline的python代码](code/deploy4lambda.py), 自定义[deployConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html),也即流量转移策略。在sample code里，我们直接用了`
 
 1. 选择已经配置好的pipeline进入配置页面，点击右上角编辑按钮，添加新的stage
 

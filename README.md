@@ -33,6 +33,10 @@ AWS 无服务器沉浸日动手实验（中国区）
 * Lab8 无服务器架构的 CI/CD （持续集成和持续部署）  
   利用 AWS Code 系列（**codepipeline**，**codecommit**, **codebuild**, **codedeploy**）实现 Serverless 的 CI/CD 工作流。
 
+* Lab9 使用 AWS CDK 创建无服务器短URL应用（轻松部署）  
+  利用 CDK 创建一个无服务器的应用，该应用将长 URL 转换成短 URL。
+  在正常开发中，强烈推荐使用 CDK 进行部署和更新。
+
 * Others Beginner Labs 其他入门实验  
   与 Lab1 采用类似的无服务器架构，创建您的第一个 AWS LAMBDA 函数，创建 Serverless 架构的调查问卷表单，通过流量转移安全部署 AWS LAMBDA 函数。
   

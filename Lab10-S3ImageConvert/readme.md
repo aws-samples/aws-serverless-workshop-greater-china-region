@@ -15,7 +15,7 @@ Amazon S3 存储桶 input 目录新增文件自动触发 AWS Lambda。Lambda 取
 * 可选择是否保留原图的纵横比 Ratio
 
 ### 控制图像质量
-* 输出 JPEG，WebP 等图像格式式指定输出的图像质量 0-100，网页展示用可设置 80  
+* 输出 JPEG，WebP 等图像格式式指定输出的图像质量，即压缩率  
 * 输出为 JPEG 渐进式格式
 
 ### 其他功能
@@ -53,11 +53,11 @@ Amazon S3 存储桶 input 目录新增文件自动触发 AWS Lambda。Lambda 取
     * `resize_Percentile_h = 0.5`  
     高度百分比大小 0-1 值  
     * `resize_FixSize_w = 640`  
-    指定宽度  
+    指定宽度，像素  
     * `resize_FixSize_h = 640`  
-    指定高度  
+    指定高度，像素  
     * `save_quality = 95` 
-    输出的图像质量，针对 JPEG, WebP 等支持 quality 参数的格式  
+    输出的图像质量，即压缩率，针对 JPEG, WebP 等支持 quality 参数的格式，值 0-100，网页展示用可设置 80  
     * `jpeg_progressive = True`  
     是否启用 JPEG 的渐进式格式  
     * `auto_orientation = True`  

@@ -1,4 +1,4 @@
-# Lab 10 Amazon S3 自动转换图片格式（Layer与环境变量）
+# Lab 10 Amazon S3 自动转换图片格式（ Lambda Layer与环境变量）
 Amazon S3 存储桶 input 目录新增文件自动触发 AWS Lambda。Lambda 取 S3 文件做转换并存回去 S3 同一个桶的 output 目录下。本 Lab 使用 Python Pillow 做图片转换，读者可以参考 Pillow 文档进行功能扩展。  
 ## 实现以下功能
 ### 转换格式
@@ -105,7 +105,7 @@ https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html
 
 ### 设置 S3 触发 Lambda
 * 设置 S3 触发 Lambda  
-在 Lambda 函数界面点击“添加触发器”，选择 S3，并配置桶和前缀。  
+在 Lambda 函数界面点击“添加触发器”，选择 S3，并选择 S3 桶，配置前缀"input/"，对 S3 ”新增“ 文件进行触发。  
 ![触发器](./img/img04.png)
   
 ### 测试上传文件  

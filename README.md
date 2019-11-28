@@ -35,6 +35,10 @@ AWS 无服务器沉浸日动手实验（AWS 中国区）
   利用 CDK 部署和更新一个无服务器的应用  
   涉及到的服务有 AWS Lambda，Amazon API Gateway，Amazon Dynamodb，Amazon CloudWatch，Amazon SNS。在 AWS 日常运维中，推荐使用 CDK 进行基础设施管理，CDK 基于 CloudFormation 现已支持大部分的 AWS 服务。
 
+* Lab10 Amazon S3 自动转换图片格式（Lambda Layer与环境变量）
+  利用 Lambda 对 S3 存储桶中新增的图像文件自动进行转码和转换大小  
+  涉及服务 Amazon S3, AWS Lambda。利用 Lambda Layer 进行依赖包管理，利用环境变量进行变量管理。
+
 * Others Beginner Labs 其他入门实验  
   与 Lab1 采用类似的无服务器架构，创建您的第一个 AWS LAMBDA 函数，创建 Serverless 架构的调查问卷表单，通过流量转移安全部署 AWS LAMBDA 函数。
   

@@ -2,25 +2,20 @@
 * Lambda runtime: Python 3.7
 
 * Choose one of the following to upload python Pillow package:
-    1. Download https://awscn.s3.cn-northwest-1.amazonaws.com.cn/python-Pillow-6.2.1.zip
-    2. Install python Pillow on Amazon Linux 2, and package as zipfile
-
+    Download https://awscn.s3.cn-northwest-1.amazonaws.com.cn/python-Pillow-6.2.1.zip
     Upload the zip file to Lambda Layer and add this layer to your function
     How to create Lambda Layer? Refer to: 
     https://aws.amazon.com/cn/blogs/china/use-aws-lambda-layer-function/
 
 * Set appropriate Lambda Memory (e.g. 256MB) and timeout (e.g. 1 min)
 
-* Optional: Change your image output format in code:
-    convert_format = 'WebP'
-    convert_postfix = '.webp'
+* Optional: Change your image output format in AWS Lambda environment variable
 
 * Setup Lambda trigger by S3 bucket with "input/" prefix
 
 * Upload img file to S3 Bucket with "input/" prefix and Lambda will output the
     file to the same bucket with "output/" prefix and .webp postfix
 '''
-#####################
 import os
 
 preserv_original_format = os.environ['preserv_original_format'] == 'True'
@@ -45,11 +40,7 @@ jpeg_progressive = os.environ['jpeg_progressive'] == 'True' # progressive mode f
 auto_orientation = os.environ['auto_orientation'] == 'True' # auto rotate iamge base on exif info
 
 #TODO: Watermark with text, image
-#TODO: Blur, Contrast, Bright, Sharp, Rotate
-
-# Best practise: 
-# Implement above variable to Lambda Environment Variable and read from os.environ
-#####################
+#TODO: Blur, Contract, Bright, Sharp, Rotate
 
 import logging
 import boto3
@@ -58,7 +49,6 @@ from PIL import Image, ExifTags, ImageOps
 import io
 import urllib.parse
 
-#logging.basicConfig(filename='logger.log')
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 client = boto3.client('s3')
@@ -73,9 +63,10 @@ def load_s3(bucket, key):
             Key=key
         )
         logger.info(json.dumps(response, default=str))
+        body = response['Body'].read()
     except Exception as e:
         logging.error(json.dumps(e, default=str))
-    body = response['Body'].read()
+        os._exit(0)
     return body
 
 # auto orientation base on exif info from image
@@ -120,7 +111,7 @@ def auto_exif_orientation(image):
 
 
 # convert
-def img_convert(body, convert_format, in_mem_img):
+def img_convert(body, convert_format):
     logger.info('convert ...')
     
     try:
@@ -159,11 +150,13 @@ def img_convert(body, convert_format, in_mem_img):
             im = im.convert(mode='RGB')
 
         #save to target format        
+        in_mem_img = io.BytesIO()
         im.save(in_mem_img, format=convert_format,
                 lossless=True, quality=save_quality, progressive=jpeg_progressive)
         in_mem_img.seek(0)
     except Exception as e:
         logging.error(json.dumps(e, default=str))
+        os._exit(0)
     return in_mem_img
 
 # put img to s3
@@ -178,6 +171,7 @@ def save_s3(bucket, key, body):
         logger.info(json.dumps(response, default=str))
     except Exception as e:
         logging.error(json.dumps(e, default=str))
+        os._exit(0)
     return
 
 # change prefix from input/ to output/ and change postfix
@@ -196,8 +190,8 @@ def lambda_handler(event, context):
     key = urllib.parse.unquote_plus(event['Records'][0]['s3']['object']['key'], encoding='utf-8')
 
     img_org = load_s3(bucket, key)
-    in_mem_img = io.BytesIO()
-    body = img_convert(img_org, convert_format, in_mem_img)
+    
+    body = img_convert(img_org, convert_format)
     key_new = change_key(key, convert_postfix)
     save_s3(bucket, key_new, body)
 

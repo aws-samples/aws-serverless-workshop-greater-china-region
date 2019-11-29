@@ -56,6 +56,8 @@ import boto3
 import json
 from PIL import Image, ExifTags, ImageOps
 import io
+import urllib.parse
+
 #logging.basicConfig(filename='logger.log')
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -191,7 +193,7 @@ def change_key(key, convert_postfix):
 def lambda_handler(event, context):
     logger.info(json.dumps(event, default=str))
     bucket = event['Records'][0]['s3']['bucket']['name']
-    key = event['Records'][0]['s3']['object']['key']
+    key = urllib.parse.unquote_plus(event['Records'][0]['s3']['object']['key'], encoding='utf-8')
 
     img_org = load_s3(bucket, key)
     in_mem_img = io.BytesIO()

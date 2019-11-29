@@ -115,3 +115,28 @@ https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html
 * 转换格式以及改变大小，并且不保持纵横比  
 
 在 S3 桶中，创建一个“input”目录，并上传图像文件到该目录中，查看该 S3 桶“output”目录下新输出的文件。  
+
+### 配置 DLQ   
+S3 上传一个文件就会触发一次 Lambda，如果处理失败会自动重试两次。当大量文件同时进入 S3 的时候，同时触发多个 Lambda。AWS 账号中默认 Lambda 并发 Limit 是 1000，此时如果并发请求超过1000，Lambda 服务会拒绝部分的请求。如果重试两次依然失败，默认则会丢弃触发消息了。  
+处理失败有几种可能，  
+* 可能是并发请求过多，重试2次仍然失败；  
+* 可能是代码逻辑问题，导致 Lambda 运行异常中断而且代码中没有捕捉到；  
+* Lambda 配置的超时时间过短，或者配置的内存过小导致异常；  
+
+最佳实践是对 Lambda 配置死信队列 Dead Letter Queue (DLQ)，使失败消息进入 SQS 或 SNS 队列，避免重试失败后消息丢弃。  
+例如 DLQ 发送到 SNS，SNS 一方面发送邮件通知到管理人员，同时又发送消息进入一个待处理的 SQS 队列，待后续重新处理。  
+对于能判断是由于并发溢出的正常消息，可以用另外一个 Lambda 对 SQS 里面的消息进行处理。配置 DLQ 界面如下：  
+
+![配置DLQ](./img/img05.png)
+
+Lambda 能写 DLQ 需要考虑增加对应的 IAM 角色权限：  
+* sns:Publish  
+或
+* sqs:SendMessage  
+
+### 监控并测试并发限制  
+我们可以通过限制 Lambda 函数并发数量，来模拟 Lambda 并发超过阀值开始拒绝请求的情况。例如配置 Lambda 的并发控制只允许2个并发  
+  
+![并发配置](./img/img06.png)
+
+同时上传多个文件到 S3 桶，然后通过 Lambda 监控界面可以观察，ConcurrentExecutions 并发数量，Throttles 限流，DeadLetterErrors 死信消息，Error count and success rate 等。

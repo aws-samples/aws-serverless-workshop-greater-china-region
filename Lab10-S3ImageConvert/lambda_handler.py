@@ -45,7 +45,7 @@ jpeg_progressive = os.environ['jpeg_progressive'] == 'True' # progressive mode f
 auto_orientation = os.environ['auto_orientation'] == 'True' # auto rotate iamge base on exif info
 
 #TODO: Watermark with text, image
-#TODO: Blur, Contract, Bright, Sharp, Rotate
+#TODO: Blur, Contrast, Bright, Sharp, Rotate
 
 # Best practise: 
 # Implement above variable to Lambda Environment Variable and read from os.environ

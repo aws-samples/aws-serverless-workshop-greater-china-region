@@ -1,4 +1,4 @@
-# Lab 10 Amazon S3 自动转换图片格式（ Lambda Layer与环境变量）
+# Lab 10 Amazon S3 自动转换图片格式（ Lambda Layer与环境变量，CDK部署）
 Amazon S3 存储桶 input 目录新增文件自动触发 AWS Lambda。Lambda 取 S3 文件做转换并存回去 S3 同一个桶的 output 目录下。本 Lab 使用 Python Pillow 做图片转换，读者可以参考 Pillow 文档进行功能扩展。  
 ## 实现以下功能
 ### 转换格式

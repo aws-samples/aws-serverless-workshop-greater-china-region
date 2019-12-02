@@ -66,31 +66,35 @@ Amazon S3 存储桶 input 目录新增文件自动触发 AWS Lambda。Lambda 取
   
 以下为环境变量配置界面示例：  
 ![Lambda Env](./img/img01.png)
-  
+   是否觉得界面配置这么麻烦？可以使用本项目带的 env.js 文件，用命令行部署或者使用本文后面的 CDK 方式。
 * TODO: Watermark with text, image  
 * TODO: Blur, Contract, Bright, Sharp, Rotate  
   
 ### 配置依赖的层（Pillow包）
-* 下载安装 Pillow 包  
-建议在 Amazon Linux 2 环境，安装对应的 Python 版本（此例为 Python3.7）再安装和打包依赖包。这样保证跟 Lambda 运行环境一致   
-安装 Python3.7
+* 下载 Pillow 包，并在 docker 环境下运行再打包 zip，这样保证打包环境跟 lambda 的 python3.7 版本的环境一致。请先运行 docker。如果不方便运行 docker 可以参考下面的 Layer 创建说明。  
 ```
-sudo yum install python37 -y
+docker run -it \
+    -v $$PWD:/var/task \
+    lambci/lambda:build-python3.7 \
+    /bin/bash -c 'pip install Pillow -t ./python/'
+
+docker ps -a
 ```
-安装 Pillow 并打包
+找到显示的运行的 container 的id号，替换下面的{{container id}}
+
+![docker ps](./img/img07.png)
+
 ```
-mkdir python
-cd python
-pip3 install Pillow -t .
-zip -r9 python-Pillow.zip ../python
+docker cp {{container id}}:/var/task/python/ .
+zip -r9 python-pillow.zip ./python
 ```
-如果不方便自己下载安装，可以采用本Lab准备好的包(Amazon Linux Python37环境下打包的)：
-[python-Pillow.zip](./python-Pillow-6.2.1.zip)  
-关于 AWS Lambda 的运行环境，[参考文档](https://docs.aws.amazon.com/zh_cn/lambda/latest/dg/lambda-runtimes.html)  
+
+如果不方便自己下载，可以采用本Lab准备好的包：
+[python-pillow.zip](./python-pillow-6.2.1.zip)  
 
 * 创建 Lambda Layer  
 在 Lambda 界面，左侧菜单 “层”（Layer），创建层。  
-上传 python-Pillow.zip 文件，并标注一下兼容运行时为 Python 3.7  
+上传 python-pillow.zip 文件，并标注一下兼容运行时为 Python 3.7  
   
   ![lambda layer](./img/img02.png)
 
@@ -99,7 +103,7 @@ zip -r9 python-Pillow.zip ../python
 
   ![Lambda associat layer](./img/img03.png)
 
-更多关于如何创建和管理层，参见：  
+更多关于如何创建和管理层，可以参见：  
 https://aws.amazon.com/cn/blogs/china/use-aws-lambda-layer-function/
 https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html
 
@@ -140,3 +144,38 @@ Lambda 能写 DLQ 需要考虑增加对应的 IAM 角色权限：
 ![并发配置](./img/img06.png)
 
 同时上传多个文件到 S3 桶，然后通过 Lambda 监控界面可以观察，ConcurrentExecutions 并发数量，Throttles 限流，DeadLetterErrors 死信消息，Error count and success rate 等。
+
+## 使用 AWS CDK 部署
+使用 CDK 可以方便地管理、部署和更新资源，并且比 CloudFormation 更容易 Debug，速度还更快。  
+本 Lab 附带了 Python 编写的 CDK 样例在 ./cdk 目录下面，按以下步骤即可完整部署：  
+1. 本地电脑上新建一个项目目录，并且初始化 CDK，例如  
+```
+mkdir cdk_img_process && cd cdk_img_process && cdk init app --language=python  
+```
+2. 把这些文件拷贝到新建的目录下，并替换原文件  
+* setup.py
+* env.js
+* ./lambda/lambda_function.py
+* python-pillow-6.2.1.zip 
+* ./cdk_img_process/cdk_img_process_stack.py  
+注意如果你的项目目录名称不是"cdk_img_process"，则 cdk_img_process_stack.py 文件不要直接替换，请打开文件替换里面的内容，但保留 class 的名称，如： class xxxxxxxStack  
+注意保持以上目录结构。  
+  
+3. 创建虚拟环境，并安装依赖
+```
+python3 -m venv .env
+source .env/bin/activate
+pip install -r requirements.txt
+cdk bootstrap
+```
+4. 部署  
+```
+cdk deploy
+```
+可以在控制台上看到新建了 CloudFormation Stack 并且创建了对应资源，大约3分钟后，创建完成。  
+如果需自己定义 Bucket 名称或者 Lambda 函数名称，可以打开 cdk_img_process_stack.py ，看里面的提示信息修改。  
+5. 一键清理所有资源  
+```
+cdk destroy
+```
+更多关于如何使用 CDK 的信息可以参考本 github 的 Lab9-CDK_with_API+Lambda+DDB

@@ -9,18 +9,10 @@ AWS 无服务器沉浸日动手实验（AWS 中国区）
   使用 Lambda 对 EC2 所挂载的 EBS 进行自动化的快照生命周期管理。  
   涉及到的服务有 AWS Lambda，Amazon EC2 与 EBS，Amazon CloudWatch Event。
 
-* Lab3 DynamoDB stream 写入 Redshift（数据处理）  
-  在数据持续写入 DynamoDB 的情况下，以 DynamoDB Stream 触发 Lambda，并通过几种不同方式注入数据到 Redshift。讨论了加载数据到 Redshift 的几种场景的架构。(本实验是开放性的 Lab)  
-  涉及到的服务有 AWS Lambda，Amazon Dynamodb，Amazon Redshift。
-
 * Lab4 Serverless Web 应用（网站动静分离，监控与灰度发布）   
   部署一个动静分离的Web应用程序(Wild Rydes)。该应用使用 ReactJS 向用户提供 Web 界面。对 Global 标准的 Wild Rydes Lab 中文化并增加了监控、版本管理与灰度发布的内容。  
   涉及到的服务有 AWS Lambda，Amazon API Gateway，Amazon Dynamodb。
   
-* Lab5 AWS Lambda 预热（性能优化）  
-  对于 Lambda 冷启动时间比较长的场景进行定时预热的示例。  
-  涉及到的服务有 AWS Lambda，Amazon CloudWatch Event。
-
 * Lab6 无服务器工作流 AWS StepFunction（工作流）  
   利用 AWS StepFunction 工作流服务，打造构建一个无服务器化的抽奖程序。  
   涉及到的服务有 AWS Lambda，Amazon API Gateway，AWS Step Functions，Amazon SNS，Amazon Dynamodb。
@@ -28,8 +20,11 @@ AWS 无服务器沉浸日动手实验（AWS 中国区）
 * Lab7 通过 AWS LAMBDA 发送微信公众号推送（微信后台）  
   使用无服务器架构 AWS LAMBDA 实现微信通知。涉及到的服务有 AWS Lambda，Amazon SNS。  
 
-* Lab8 无服务器架构的 CI/CD （持续集成和持续部署）  
+* Lab8 无服务器架构的 CI/CD （持续集成和持续部署）Global Region  
   利用 AWS Code 系列（**codepipeline**，**codecommit**, **codebuild**, **codedeploy**）实现 Serverless 的 CI/CD 工作流。
+
+* Lab8 无服务器架构的 CI/CD （持续集成和持续部署）China Region  
+  在中国区配合 Jenkins 和 AWS CodeDeploy 实现 Lambda 的自动化发布与部署
 
 * Lab9 使用 AWS CDK 创建无服务器短URL应用（基础设施即代码）  
   利用 CDK 部署和更新一个无服务器的应用  

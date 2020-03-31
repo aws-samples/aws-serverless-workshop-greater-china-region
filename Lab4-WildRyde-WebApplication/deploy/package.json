@@ -11,7 +11,8 @@
     "cdk": "cdk",
     "init": "npm i && ./node_modules/aws-cdk/bin/cdk bootstrap",
     "asset": "test -f dist/tutorial/index.html || (mkdir -p dist/ && unzip ../WildRydes-aws-serverless-workshop.zip -d dist/)",
-    "deploy": "npm run asset && ./node_modules/aws-cdk/bin/cdk deploy --require-approval never"
+    "deploy": "npm run asset && ./node_modules/aws-cdk/bin/cdk deploy --require-approval never",
+    "cleanup": "./node_modules/aws-cdk/bin/cdk destroy"
   },
   "devDependencies": {
     "@aws-cdk/assert": "1.31.0",

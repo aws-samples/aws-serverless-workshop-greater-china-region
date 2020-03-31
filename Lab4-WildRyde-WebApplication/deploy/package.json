@@ -9,7 +9,7 @@
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk",
-    "asset": "rm -rf dist/ && mkdir -p dist/ && unzip ../WildRydes-aws-serverless-workshop.zip 'tutorial/*' -d dist/",
+    "asset": "rm -rf dist/ && mkdir -p dist/ && unzip ../WildRydes-aws-serverless-workshop.zip -d dist/",
     "deploy": "npm run asset && ./node_modules/aws-cdk/bin/cdk deploy --require-approval never"
   },
   "devDependencies": {
@@ -23,6 +23,7 @@
     "typescript": "~3.7.2"
   },
   "dependencies": {
+    "@aws-cdk/aws-dynamodb": "^1.31.0",
     "@aws-cdk/aws-s3": "^1.31.0",
     "@aws-cdk/aws-s3-deployment": "^1.31.0",
     "@aws-cdk/core": "1.31.0",

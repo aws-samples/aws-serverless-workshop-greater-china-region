@@ -1,4 +1,5 @@
 import * as cdk from '@aws-cdk/core';
+import apigateway = require('@aws-cdk/aws-apigateway');
 import dynamodb = require('@aws-cdk/aws-dynamodb');
 import iam = require('@aws-cdk/aws-iam');
 import lambda = require('@aws-cdk/aws-lambda');
@@ -50,5 +51,18 @@ export class ServerlessLab4Stack extends cdk.Stack {
       handler: 'index.handler',
       timeout: cdk.Duration.seconds(29),
     });
+
+    // part 3 -- backend integrate with API Gateway
+    const api = new apigateway.RestApi(this, 'WildRydesAPI', {
+      deployOptions: {
+          stageName: 'prod',
+      }
+    });
+    const rideRes = api.root.addResource('ride');
+    rideRes.addCorsPreflight({
+      allowOrigins: apigateway.Cors.ALL_ORIGINS,
+    });
+    rideRes.addMethod('POST', new apigateway.LambdaIntegration(wildRydesLambda));
+
   }
 }

@@ -18,4 +18,4 @@ npm run deploy
 ```shell
 npm run cleanup
 ```
-注意：实验中创建的`serverlesslab4wildrydesst-wildrydesbucket`开头的S3 Bucket以及DynamoDB Table `Rides`需要手动清理。
+**注意**：实验中创建的`serverlesslab4wildrydesst-wildrydesbucket`开头的S3 Bucket以及DynamoDB Table `Rides`也会被删除，如有需要的数据请提前备份。

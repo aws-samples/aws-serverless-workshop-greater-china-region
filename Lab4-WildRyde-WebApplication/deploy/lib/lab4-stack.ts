@@ -14,13 +14,15 @@ export class ServerlessLab4Stack extends cdk.Stack {
     const stack = cdk.Stack.of(this);
 
     const webSiteBucket = new s3.Bucket(this, `WildRydesBucket`, {
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
       websiteIndexDocument: 'index.html',
       publicReadAccess: true,
     });
     new s3deploy.BucketDeployment(this, 'DeployWebsite', {
       sources: [s3deploy.Source.asset('./dist/tutorial')],
       destinationBucket: webSiteBucket,
-      destinationKeyPrefix: '/' // optional prefix in destination bucket
+      destinationKeyPrefix: '/', // optional prefix in destination bucket
+      retainOnDelete: false,
     });
 
     new cdk.CfnOutput(this, `${stack.stackName}-S3-StaticWebSite-Domain`, {
@@ -32,7 +34,8 @@ export class ServerlessLab4Stack extends cdk.Stack {
     // part 2 -- create backend including dynamodb and lambda
     const ridesTable = new dynamodb.Table(this, 'RidesTable', {
       tableName: 'Rides',
-      partitionKey: { name: 'RideId', type: dynamodb.AttributeType.STRING }
+      partitionKey: { name: 'RideId', type: dynamodb.AttributeType.STRING },
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
     });
 
     const lambdaRole = new iam.Role(this, `WildRydes-Lambda-Role`, {
@@ -56,6 +59,9 @@ export class ServerlessLab4Stack extends cdk.Stack {
     const api = new apigateway.RestApi(this, 'WildRydesAPI', {
       deployOptions: {
           stageName: 'prod',
+      },
+      endpointConfiguration: {
+        types: [ apigateway.EndpointType.REGIONAL ]
       }
     });
     const rideRes = api.root.addResource('ride');

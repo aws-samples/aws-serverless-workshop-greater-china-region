@@ -8,6 +8,6 @@
 ## 部署方式
 
 ```shell
-npm i # 安装依赖
+npm run init # 安装依赖以及初始化cdk
 npm run deploy
 ```

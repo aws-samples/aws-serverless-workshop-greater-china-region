@@ -9,6 +9,7 @@
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk",
+    "init": "npm i && ./node_modules/aws-cdk/bin/cdk bootstrap",
     "asset": "rm -rf dist/ && mkdir -p dist/ && unzip ../WildRydes-aws-serverless-workshop.zip -d dist/",
     "deploy": "npm run asset && ./node_modules/aws-cdk/bin/cdk deploy --require-approval never"
   },

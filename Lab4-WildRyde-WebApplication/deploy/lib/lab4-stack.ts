@@ -62,7 +62,13 @@ export class ServerlessLab4Stack extends cdk.Stack {
     rideRes.addCorsPreflight({
       allowOrigins: apigateway.Cors.ALL_ORIGINS,
     });
-    rideRes.addMethod('POST', new apigateway.LambdaIntegration(wildRydesLambda));
-
+    
+    // part 4 -- canary deployment
+    const versionThreeFleets = wildRydesLambda.addVersion('version-three-fleets');
+    const stableLambdaAlias = new lambda.Alias(this, 'WildRydesLambdaStable', {
+      version: versionThreeFleets,
+      aliasName: 'stable',
+    });
+    rideRes.addMethod('POST', new apigateway.LambdaIntegration(stableLambdaAlias));
   }
 }

@@ -1,0 +1,35 @@
+{
+  "name": "serverless-lab4",
+  "version": "0.1.0",
+  "bin": {
+    "deploy": "bin/deploy.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "init": "npm i && ./node_modules/aws-cdk/bin/cdk bootstrap",
+    "asset": "test -f dist/tutorial/index.html || (mkdir -p dist/ && unzip ../WildRydes-aws-serverless-workshop.zip -d dist/)",
+    "deploy": "npm run asset && ./node_modules/aws-cdk/bin/cdk deploy --require-approval never",
+    "cleanup": "./node_modules/aws-cdk/bin/cdk destroy"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.31.0",
+    "@types/jest": "^24.0.22",
+    "@types/node": "10.17.5",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "aws-cdk": "1.31.0",
+    "ts-node": "^8.1.0",
+    "typescript": "~3.7.2"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-apigateway": "^1.31.0",
+    "@aws-cdk/aws-dynamodb": "^1.31.0",
+    "@aws-cdk/aws-s3": "^1.31.0",
+    "@aws-cdk/aws-s3-deployment": "^1.31.0",
+    "@aws-cdk/core": "1.31.0",
+    "source-map-support": "^0.5.16"
+  }
+}

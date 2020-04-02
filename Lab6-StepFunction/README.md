@@ -38,6 +38,9 @@
 3. 进入`状态机`主页面后，选择`创建状态机`
 4. 在`定义状态机`栏目下，选择默认`使用代码段创作`。同时在`详细信息`栏目输入状态机名称`Lottery`
 5. 在`状态机定义`栏目下，复制如下状态机定义文件，通过`Amazon States Language`来定义状态机的状态流转
+**注意**
+- 如果您使用的是 AWS 中国区, Notify Winners步骤的"Resource": "arn:aws-cn:states:::sns:publish"
+- 如果您使用的是 AWS 海外区, Notify Winners步骤的"Resource": "arn:aws:states:::sns:publish"
 ```
 {
   "Comment": "A simple AWS Step Functions state machine that simulates the lottery session",
@@ -164,6 +167,10 @@
   }
 }
 ```
+您可能遇到提示告知`不合规的ARN`的警告，您需要完成`创建AWS Lambda 任务`以及`创建 AWS SNS 通知服务`，然后拷贝和替换状态机定义下相关资源`ARN`
+![Lab6-StepFunction InvalidARN](docs/img/InvalidARN.png)
+
+
 6. 在`状态机定义`栏目的右侧，点击`刷新`按钮，可以看到状态机流转的流程图。点击`下一步`
 7. 在`配置设置`下，选择`为我创建IAM角色`, 输入自定义的IAM角色名称`MyStepFunctionsExecutionRole`
 8. 点击`创建状态机`完成创建过程
@@ -202,19 +209,21 @@ def lambda_handler(event, context):
 
 `Lottery-RandomSelectWinners` 代码块
 ```
+import os
 import json
 import boto3
 from random import randint
 from boto3.dynamodb.conditions import Key, Attr
 
 TOTAL_NUM = 10
+CURRENT_REGION = os.environ["AWS_REGION"]
 
 def lambda_handler(event, context):
     # variables
     num_of_winners = event['num_of_winners']
     
     # query in dynamodb
-    dynamodb = boto3.resource('dynamodb', region_name='cn-northwest-1')
+    dynamodb = boto3.resource('dynamodb', region_name=CURRENT_REGION)
     table = dynamodb.Table('Lottery-Employee')
 
     # random select the winners, if has duplicate value, re-run the process
@@ -240,9 +249,12 @@ def lambda_handler(event, context):
 
 `Lottery-ValidateWinners`代码块
 ```
+import os
 import json
 import boto3
 from boto3.dynamodb.conditions import Key, Attr
+
+CURRENT_REGION = os.environ["AWS_REGION"]
 
 def lambda_handler(event, context):
     # variables
@@ -250,7 +262,7 @@ def lambda_handler(event, context):
     winner_details = event['winner_details']
     
     # query in dynamodb
-    dynamodb = boto3.resource('dynamodb', region_name='cn-northwest-1')
+    dynamodb = boto3.resource('dynamodb', region_name=CURRENT_REGION)
     table = dynamodb.Table('Lottery-Winners')
 
     # valiate whether the winner has already been selected in the past draw
@@ -282,9 +294,12 @@ def lambda_handler(event, context):
 
 `Lottery-RecordWinners` 代码块
 ```
+import os
 import json
 import boto3
 from boto3.dynamodb.conditions import Key, Attr
+
+CURRENT_REGION = os.environ["AWS_REGION"]
 
 def lambda_handler(event, context):
     # variables
@@ -294,7 +309,7 @@ def lambda_handler(event, context):
     employee_ids = [winner['employee_id'] for winner in winner_details]
     
     # save the records in dynamodb
-    dynamodb = boto3.resource('dynamodb', region_name='cn-northwest-1')
+    dynamodb = boto3.resource('dynamodb', region_name=CURRENT_REGION)
     table = dynamodb.Table('Lottery-Winners')
     
     for employee_id in employee_ids:
@@ -332,19 +347,26 @@ def lambda_handler(event, context):
 2. 在左侧控制栏中选在`表`, 然后在主页面中选择`创建表`
 3. 在`创建Dynamodb表`中，填入如下信息
    - 表名称：`Lottery-Winners`
-   - 主键：`employee_id`
+   - 主键：`employee_id`，类型：`String`
 4. `表设置`中确认勾选`使用默认设置`,点击`创建`
 5. 同样的设置步骤，点击`创建表`,在`创建Dynamodb表`中，填入如下信息
    - 表名称：`Lottery-Employee`
-   - 主键：`employee_id`
+   - 主键：`employee_id`，类型：`String`
 6. `表设置`中确认勾选`使用默认设置`,点击`创建`
 7. 等待表创建完成后, 通过本repo中的`request-items.json`文件导入数据到`Lottery-Employee`
 ```
-$ aws dynamodb batch-write-item --request-items file://request-items.json
+$ AWS_REGION=<执行实验的AWS Region>
+$ aws dynamodb batch-write-item --request-items file://request-items.json --region ${AWS_REGION}
+{
+    "UnprocessedItems": {}
+}
 ```
 8. 选择表`Lottery-Employee` Tab页面中的`索引`, 点击`创建索引`
    - 主键：`lottery_serial`, 字段类型选择`数字`
    - 索引名称：`lottery_serial-index`
+   - 使用其他默认设置
+
+  等等索引状态变为`活动`（`Active`），表状态变为`活动`（`Active`）
 
 ### 执行 Step Functions 状态机
 1. 进入 AWS 控制台，在`服务`中搜索`Step Functions`

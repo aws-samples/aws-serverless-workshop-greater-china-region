@@ -1,6 +1,9 @@
+import os
 import json
 import boto3
 from boto3.dynamodb.conditions import Key, Attr
+
+CURRENT_REGION = os.environ["AWS_REGION"]
 
 def lambda_handler(event, context):
     # variables
@@ -8,7 +11,7 @@ def lambda_handler(event, context):
     winner_details = event['winner_details']
     
     # query in dynamodb
-    dynamodb = boto3.resource('dynamodb', region_name='ap-southeast-1')
+    dynamodb = boto3.resource('dynamodb', region_name=CURRENT_REGION)
     table = dynamodb.Table('Lottery-Winners')
 
     # valiate whether the winner has already been selected in the past draw

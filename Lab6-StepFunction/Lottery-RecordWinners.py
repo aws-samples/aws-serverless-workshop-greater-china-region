@@ -1,6 +1,9 @@
+import os
 import json
 import boto3
 from boto3.dynamodb.conditions import Key, Attr
+
+CURRENT_REGION = os.environ["AWS_REGION"]
 
 def lambda_handler(event, context):
     # variables
@@ -10,7 +13,7 @@ def lambda_handler(event, context):
     employee_ids = [winner['employee_id'] for winner in winner_details]
     
     # save the records in dynamodb
-    dynamodb = boto3.resource('dynamodb', region_name='ap-southeast-1')
+    dynamodb = boto3.resource('dynamodb', region_name=CURRENT_REGION)
     table = dynamodb.Table('Lottery-Winners')
     
     for employee_id in employee_ids:

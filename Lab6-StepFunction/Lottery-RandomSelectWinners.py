@@ -1,16 +1,18 @@
+import os
 import json
 import boto3
 from random import randint
 from boto3.dynamodb.conditions import Key, Attr
 
 TOTAL_NUM = 10
+CURRENT_REGION = os.environ["AWS_REGION"]
 
 def lambda_handler(event, context):
     # variables
     num_of_winners = event['num_of_winners']
     
     # query in dynamodb
-    dynamodb = boto3.resource('dynamodb', region_name='ap-southeast-1')
+    dynamodb = boto3.resource('dynamodb', region_name=CURRENT_REGION)
     table = dynamodb.Table('Lottery-Employee')
 
     # random select the winners, if has duplicate value, re-run the process

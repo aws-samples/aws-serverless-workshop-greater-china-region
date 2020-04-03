@@ -9,9 +9,9 @@
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk",
-    "init": "npm i && ./node_modules/aws-cdk/bin/cdk bootstrap",
-    "asset": "test -f dist/tutorial/index.html || (mkdir -p dist/ && unzip ../WildRydes-aws-serverless-workshop.zip -d dist/)",
-    "deploy": "npm run asset && ./node_modules/aws-cdk/bin/cdk deploy --require-approval never",
+    "init": "npm i && npm run assets && ./node_modules/aws-cdk/bin/cdk bootstrap",
+    "assets": "test -f dist/tutorial/index.html || (mkdir -p dist/ && unzip ../WildRydes-aws-serverless-workshop.zip -d dist/)",
+    "deploy": "npm run assets && ./node_modules/aws-cdk/bin/cdk deploy --require-approval never",
     "cleanup": "./node_modules/aws-cdk/bin/cdk destroy"
   },
   "devDependencies": {

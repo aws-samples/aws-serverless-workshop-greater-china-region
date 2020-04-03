@@ -96,7 +96,7 @@
              "Resource": "arn:aws:states:::sns:publish",
              "Parameters": {
                "TopicArn": "arn:aws:sns:ap-southeast-1:<account-id>:Lottery-Notification",
-               "Message.$": "$.body"
+               "Message.$": "$.sns"
              },
              "End": true
            }

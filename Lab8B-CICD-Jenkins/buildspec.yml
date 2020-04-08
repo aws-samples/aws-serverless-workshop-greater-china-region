@@ -1,0 +1,36 @@
+# Do not change version. This is the version of aws buildspec, not the version of your buldspec file.
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+        python: 3.7
+    commands:
+      - echo pre Installing ...
+  pre_build:
+    commands:
+      - echo prebuild,Installing update ...
+      # 基本环境更新
+      #- yum update -y
+  build:
+    commands:
+      - echo Build started on `date`
+  post_build:
+    commands:
+      - ls 
+      - mkdir build
+      - # 替换所有尖括号标注，替换时，去掉尖括号
+      - CurrentVersion=$(echo $(aws lambda get-alias --function-name <替换为自己的 lambda 函数 ARN> --name <替换为自己的lambda alias> --region cn-north-1 | grep FunctionVersion | tail -1 |tr -cd "[0-9]"))
+      - zip -r ./build/lambda.zip ./lambda_function.py
+      - aws lambda update-function-code --function-name <替换为自己的 lambda 函数 ARN> --zip-file fileb://build/lambda.zip  --region cn-north-1 --publish
+      - TargetVersion=$(echo $(aws lambda list-versions-by-function --function-name <替换为自己的 lambda 函数 ARN> --region cn-north-1 | grep Version | tail -1 | tr -cd "[0-9]"))
+      - echo $CurrentVersion
+      - echo $TargetVersion
+      - sed -e 's/{{CurrentVersion}}/'$CurrentVersion'/g' -e 's/{{TargetVersion}}/'$TargetVersion'/g' appspec.template.yaml > appspec.yaml
+      - aws s3 cp appspec.yaml s3://<替换为自己的S3 Bucket名称>/jenkins/codedeploy/appspec.yaml
+      - # 替换 first-try-with-jenkins 为自己的codedeploy名称
+      - aws deploy create-deployment --application-name first-try-with-jenkins --deployment-group-name first-try-with-jenkins --s3-location bucket='<替换为自己的S3 Bucket名称>',key='jenkins/codedeploy/appspec.yaml',bundleType=YAML
+artifacts:
+  type: yaml
+  files:
+    - appspec.yaml

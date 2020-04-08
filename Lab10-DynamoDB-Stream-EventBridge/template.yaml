@@ -1,0 +1,139 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  dynamoDB stream fanout with EventBridge.
+
+Metadata:
+  AWS::ServerlessRepo::Application:
+    Name: fanout
+    Description: >-
+      forwards events from a DynamoDB stream into EventBridge event bus.
+      Author: AaRon
+      Labels: [serverless, dynamodb, eventbridge]
+      SourceCodeUrl: https://github.com/yike5460/SAM
+      LicenseUrl: LICENSE
+      ReadmeUrl: README.md
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 3
+
+Parameters:
+  DynamoDBStreamArn:
+    Type: String
+    # Default: "arn:aws:dynamodb:<region>:<account id>:table/<table name>/stream/<timestamp>"
+    Default: "arn:aws-cn:dynamodb:cn-northwest-1:795474696122:table/eventBridge/stream/2020-04-06T14:35:39.992"
+    Description: Amazon DynamoDB Stream ARN.
+  EventBusName:
+    Type: String
+    Default: "fanoutBus"
+    Description: AWS EventBridge Event Bus Name.
+  EventBridgeMaxAttempt:
+    Type: Number
+    Default: 3
+    MinValue: 1
+    MaxValue: 5
+    Description: Max attempt to put events into AWS EventBridge Event Bus. Default is 3.
+
+Resources:
+  FanoutLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: fanout.lambda_handler
+      Runtime: python3.8
+      MemorySize: 768
+      Timeout: 360
+      # policy arn:aws-cn:iam::aws:policy/AWSXrayWriteOnlyAccess not available in China region
+      # Tracing: Active
+      Environment:
+        Variables:
+          DLQ_URL: !Ref FanoutDLQ # FanoutLambda.DestinationQueue
+          MAX_ATTEMPT: !Ref EventBridgeMaxAttempt
+          EVENT_BUS_NAME: !Ref EventBusName
+          EVENT_SOURCE_ARN: !Ref DynamoDBStreamArn
+          EVENT_TARGET_LAMBDA_ARN: !GetAtt ConsumerLambda.Arn
+      EventInvokeConfig:
+              MaximumEventAgeInSeconds: 120
+              MaximumRetryAttempts: 1
+              DestinationConfig:
+                OnFailure:
+                  Type: SQS
+                  Destination: !GetAtt FanoutDLQ.Arn
+      Policies:
+        - SQSSendMessagePolicy:
+            QueueName: !GetAtt FanoutDLQ.QueueName
+        # refer to https://github.com/awslabs/serverless-application-model/blob/develop/samtranslator/policy_templates_data/policy_templates.json
+        # NOTE EventBridgePutEventsPolicy NOT available in China region
+        - EventBridgePutEventsPolicy:
+            Description: 'Gives permissions to send events to EventBridge'
+            EventBusName: !Ref EventBusName
+            Statement:
+              - Effect: Allow
+                Action:
+                  - events: '*' 
+                Resource: '*'
+        # there is no similar event below in SAM, we need to updata manually to add List* (AmazonEventBridgeReadOnlyAccess) policies afterwards
+        # - EventBridgeListEventsPolicy:
+        #     Description: 'Gives permissions to EventBridge bus'
+        #     Statement:
+        #       - Effect: Allow
+        #         Action:
+        #           - events:ListEventBuses
+        #         Resource: arn:aws:events:ap-northeast-1:275937937240:event-bus/fanoutBus
+      Events:
+        FanoutSource:
+          Type: DynamoDB
+          Properties:
+            Stream: !Ref DynamoDBStreamArn
+            StartingPosition: TRIM_HORIZON
+            BatchSize: 10
+            MaximumBatchingWindowInSeconds: 10
+            MaximumRetryAttempts: 10
+            Enabled: true
+            DestinationConfig:
+              # we creat OnSuccess destination in code directly
+              # OnSuccess:
+              #   Type: [SQS | SNS | EventBridge | Function]
+              #   Destination: ARN of [SQS | SNS | EventBridge | Function]
+              OnFailure:
+                Type: SQS
+                Destination: !GetAtt FanoutDLQ.Arn
+  ConsumerLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: lambdaConsumer.handler
+      Runtime: python3.8
+      Environment:
+        Variables:
+          EVENT_BUS_NAME: !Ref EventBusName
+      MemorySize: 256
+      Timeout: 360
+      # policy arn:aws-cn:iam::aws:policy/AWSXrayWriteOnlyAccess not available in China region
+      # Tracing: Active
+      Events:
+        FanoutEventBridge:
+          Type: EventBridgeRule
+          Description: trigger from centralized eventbridge service
+          Properties:
+            EventBusName: !Ref EventBusName
+            Pattern:
+              source:
+              - update.aws.dynamodb
+              detail-type:
+              - operations in dynamodb
+  FanoutDLQ:
+    Type: "AWS::SQS::Queue"
+
+Outputs:
+  FanoutLambdaName:
+    Description: "Fanout Lambda Function Name"
+    Value: !Ref FanoutLambda
+  ConsumerLambdaName:
+    Description: "Consumer Lambda Function Name"
+    Value: !Ref ConsumerLambda
+  FanoutDlqUrl:
+    Description: "Fanout DLQ URL"
+    Value: !Ref FanoutDLQ

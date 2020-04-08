@@ -1,0 +1,8 @@
+{
+  "Time": "1970",
+  "Source": "insert.aws.dynamodb",
+  "Resource": "event bridge",
+  "DetailType": "operations in dynamodb",
+  "Detail": "test detail",
+  "EventBusName": "EVENT_BUS_NAME"
+}

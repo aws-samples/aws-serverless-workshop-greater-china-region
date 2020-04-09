@@ -21,7 +21,7 @@
 
 ## 前提条件
 
-- 由于中国区暂未引进 pipeline，此 lab 内容基于 **Global区账号** 。请提前到 [此页面](https://aws.amazon.com/cn/)注册海外区账号。
+- 由于中国区暂未引进 pipeline，此 lab 内容基于 **Global区账号** 。请提前到 [此页面](https://aws.amazon.com/cn/)注册海外区账号。如果您使用的是中国区账号希望实现serverless的CICD，请参考[此lab](https://github.com/aws-samples/aws-serverless-workshop-greater-china-region/tree/master/Lab8B-CICD-Jenkins)
 
 - 本文是基于新加坡 region 完成的，您也可以自行选择其他区域，记得替换配置文件里面的 [region-code](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions)
 

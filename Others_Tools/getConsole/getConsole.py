@@ -103,8 +103,7 @@ if __name__ == '__main__':
     tempCreStr = json.dumps(tempCre)
 
     # Make request to AWS federation endpoint to get sign-in token
-    req_para = "?Action=getSigninToken&SessionDuration=43200&Session=" + urllib.parse.quote_plus(
-        tempCreStr)
+    req_para = "?Action=getSigninToken&SessionDuration=43200&Session=" + urllib.parse.quote_plus(tempCreStr)
     if region.startswith("cn-"):
         request_url = "https://signin.amazonaws.cn/federation" + req_para
     else:

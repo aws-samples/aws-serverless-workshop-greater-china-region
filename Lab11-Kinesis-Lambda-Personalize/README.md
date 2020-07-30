@@ -29,11 +29,11 @@
 ### lambda部署：
 方法1
 * 可以在项目目录下执行 mvn package 
-* 然后将打包后的jar包，通过 lambda console 直接上jar包，并配置 入口类为com.sample.ClickStreamProcess::ClickStreamProcess
+* 然后将打包后的jar包，通过 lambda console 直接上传 jar包，并配置入口类为com.sample.ClickStreamProcess::ClickStreamProcess
 * 配置lambda 触发器为Kinesis
 * lambda 执行角色需要增加Personalize的权限
 
 方法2
-* 通过SAM 定义事件源头，以及权限等
+* 通过SAM 定义事件源，以及权限等
 * sam build 打包应用
 * sam deploy 发布应用

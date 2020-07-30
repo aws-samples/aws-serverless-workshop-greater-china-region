@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: kinesis-lambda-personalize
+Resources:
+  ClickStreamProcessFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: com.sample.ClickStreamProcess::handleRequest
+      Runtime: java8
+      MemorySize: 512
+      Policies:
+        #  配置Lambda可以访问Personalize进行数据推送
+         - AmazonPersonalizeFullAccess
+      Timeout: 40
+      Events:
+        KinesisEvent:
+          Type: Kinesis
+          Properties:
+            Stream: $streamarn #需要根据实际环境替换
+            StartingPosition: TRIM_HORIZON
+            BatchSize: 10
+            Enabled: false

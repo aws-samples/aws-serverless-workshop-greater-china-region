@@ -4,19 +4,20 @@
 
 ## 基本架构：
 
-![Architecture](https://github.com/VerRan/aws-serverless-workshop-greater-china-region/blob/master/Lab11-Kinesis-Lambda-Personalize/img/arhitecture.png)
+![](https://github.com/VerRan/aws-serverless-workshop-greater-china-region/blob/master/Lab11-Kinesis-Lambda-Personalize/img/arhitecture.png)
+
 ## 配置步骤：
 * personalize配置
 * kinesis配置
-* lambda开发，实现流数据的接收，并同步到Kinesis的 Event trackers
+* lambda开发，实现流数据的接收，并同步数据到Personalize的Event trackers
 * lambda部署
 
 ### Personalize配置：
-* 参考 ![personalize入门](https://docs.aws.amazon.com/personalize/latest/dg/getting-started-console.html)
-* 配置支持实时数据，创建Event trackers来实现实时数据的采集，参考 ![Event Trackers](https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html)
+* 参考 [personalize入门](https://docs.aws.amazon.com/personalize/latest/dg/getting-started-console.html)
+* 配置支持实时数据，创建Event trackers来实现实时数据的采集，参考 [Event Trackers](https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html)
 
 ### Kinesis配置：
-* 配置kinesis 收集用户行为数据，![Kinesis 配置](https://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html)
+* 配置kinesis 收集用户行为数据，[Kinesis 配置](https://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html)
 * Kinesis创建完成后，可以通过 test/java/sendClickToKinesis.py 来测试实时消息发送，这里需要注意替换 kinesis的流名称
 
 ### lambda开发：

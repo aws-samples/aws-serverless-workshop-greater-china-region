@@ -5,9 +5,6 @@
 ## 基本架构：
 
 ![Architecture](https://github.com/VerRan/aws-serverless-workshop-greater-china-region/blob/master/Lab11-Kinesis-Lambda-Personalize/img/arhitecture.png)
-
-DynamoDB表中的插入，更新和删除等操作通过DynamoDB流捕获，并用于触发AWS Lambda函数或其他后端服务（消费者）。目前单个DynamoDB流分片所能触发的后端服务（消费者）不能超过两个，超出部分将被限流。该代码库利用DynamoDB流触发后端Lambda函数，该Lambda函数捕获流事件并将其发布到Amazon EventBridge事件总线以触发数倍的后端服务（消费者），同时Lambda函数如果在所配置的重试次数之内无法将事件发布到Amazon EventBridge事件总线，它将把消息发送到SQS死信队列，用于后续调查定位。该代码库实现的语言为Python，Java版本可以参考[这里](https://github.com/awslabs/aws-dynamodb-stream-eventbridge-fanout "这里")
-
 ## 配置步骤：
 * personalize配置
 * kinesis配置

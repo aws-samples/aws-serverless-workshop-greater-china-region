@@ -25,11 +25,13 @@ _注意: 此目录无需单独执行 cdk init 来初始化工程目录，已包�
 ```
 npm install
 ```
-5.配置 CDK 执行环境
+5.更新 lib/lambda_efsml-stack.ts 文件中将使用的 EC2 keypair 名字
+
+6.配置 CDK 执行环境
 ```
 cdk bootstrap aws://{account_id}/{region} --profile {profileName}
 ```
-6.部署环境
+7.部署环境
 ```
 cdk deploy --profile {profileName}
 ```
@@ -41,7 +43,7 @@ FuntionwithprovisionedConcurr  | arn:aws:lambda:cn-northwest-1:XXX | 已配置 P
 InstancePublicIp  | xxx.xxx.xxx.xxx | EC2 公网 IP 地址
 Region  | cn-northwest-1 | 部署区域
 
-7.销毁环境
+8.销毁环境
 ```
 cdk destroy --profile {profileName}
 ```

@@ -26,6 +26,7 @@ _注意: 此目录无需单独执行 cdk init 来初始化工程目录，已包�
 npm install
 ```
 5.更新 lib/lambda_efsml-stack.ts 文件中将使用的 EC2 keypair 名字
+![image](https://github.com/ilove2git/aws-serverless-workshop-greater-china-region/blob/dev/Lab12-Lambda_EFS_Inference/image/keypair.png)
 
 6.配置 CDK 执行环境
 ```

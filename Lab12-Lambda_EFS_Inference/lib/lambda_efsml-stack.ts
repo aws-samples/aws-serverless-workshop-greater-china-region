@@ -47,7 +47,7 @@ export class LambdaEfsmlStack extends cdk.Stack {
       instanceType: ec2.InstanceType.of(ec2.InstanceClass.T2, ec2.InstanceSize.XLARGE2),
       machineImage: new ec2.AmazonLinuxImage({ generation: ec2.AmazonLinuxGeneration.AMAZON_LINUX }),
       // keyName: 'zeyao-ap-northeast-1'    // replacee with your own keyname
-      keyName: 'zeyao-cn-northwest-1'    // replacee with your own keyname
+      keyName: 'xxxxxx'    // replacee with your own keyname
     })
 
     ec2SecurityGroup.connections.allowFromAnyIpv4(ec2.Port.tcp(22), 'Allow SSH from Internet')

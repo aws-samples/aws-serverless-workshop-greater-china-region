@@ -1,8 +1,9 @@
 # Lab 12 Lambda_EFS_Inference Lambda 借助 EFS 实现模型推理
-Amazon S3 存储桶 input 目录新增文件自动触发 AWS Lambda。Lambda 取 S3 文件做转换并存回去 S3 同一个桶的 output 目录下。本 Lab 使用 Python Pillow 做图片转换，读者可以参考 Pillow 文档进行功能扩展。 
+本实验演示 Lambda 函数如何通过 EFS 文件系统挂载大文件，突破自身可用存储空间限制（解压文件不超过250MB 以及 /tmp 容量512MB），实现机器学习推理场景。同时，借助 Provisioned Concurrency 特性，去除函数冷启动，极大提升推理响应时间。
 
 ## 架构图
-
+通过 EC2 instance 挂载 EFS 文件系统，并提前安装 Pytorch 框架和预训练模型；之前再将其挂载至 Lambda 函数。Lambda 函数分为 未开启 Provisioned Concurrency 和 开启两个版本。
+![image](https://github.com/ilove2git/aws-serverless-workshop-greater-china-region/blob/dev/Lab12-Lambda_EFS_Inference/image/architecture.png)
 
 ## 使用 AWS CDK 部署
 本 Lab 附带了 Typescript 编写的 CDK 样例在模块主目录下面，按以下步骤即可完整部署： 

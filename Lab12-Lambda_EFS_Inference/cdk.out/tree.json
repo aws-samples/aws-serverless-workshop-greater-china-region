@@ -1,0 +1,823 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "LambdaEfsmlStack": {
+        "id": "LambdaEfsmlStack",
+        "path": "LambdaEfsmlStack",
+        "children": {
+          "LambdaEFSMLVPC": {
+            "id": "LambdaEFSMLVPC",
+            "path": "LambdaEfsmlStack/LambdaEFSMLVPC",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "LambdaEfsmlStack/LambdaEFSMLVPC/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPC",
+                  "aws:cdk:cloudformation:props": {
+                    "cidrBlock": "10.0.0.0/16",
+                    "enableDnsHostnames": true,
+                    "enableDnsSupport": true,
+                    "instanceTenancy": "default",
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "LambdaEfsmlStack/LambdaEFSMLVPC"
+                      }
+                    ]
+                  }
+                }
+              },
+              "PublicSubnet1": {
+                "id": "PublicSubnet1",
+                "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.0.0/18",
+                        "vpcId": {
+                          "Ref": "LambdaEFSMLVPCA53F2950"
+                        },
+                        "availabilityZone": "cn-northwest-1a",
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet1/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "LambdaEFSMLVPCA53F2950"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "LambdaEFSMLVPCPublicSubnet1RouteTableB9C33CC0"
+                        },
+                        "subnetId": {
+                          "Ref": "LambdaEFSMLVPCPublicSubnet1Subnet2EAB2D82"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "LambdaEFSMLVPCPublicSubnet1RouteTableB9C33CC0"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "LambdaEFSMLVPCIGW53DBFE8E"
+                        }
+                      }
+                    }
+                  },
+                  "EIP": {
+                    "id": "EIP",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet1/EIP",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::EIP",
+                      "aws:cdk:cloudformation:props": {
+                        "domain": "vpc",
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "NATGateway": {
+                    "id": "NATGateway",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet1/NATGateway",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NatGateway",
+                      "aws:cdk:cloudformation:props": {
+                        "allocationId": {
+                          "Fn::GetAtt": [
+                            "LambdaEFSMLVPCPublicSubnet1EIP4557A7E5",
+                            "AllocationId"
+                          ]
+                        },
+                        "subnetId": {
+                          "Ref": "LambdaEFSMLVPCPublicSubnet1Subnet2EAB2D82"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "PublicSubnet2": {
+                "id": "PublicSubnet2",
+                "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.64.0/18",
+                        "vpcId": {
+                          "Ref": "LambdaEFSMLVPCA53F2950"
+                        },
+                        "availabilityZone": "cn-northwest-1b",
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet2/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "LambdaEFSMLVPCA53F2950"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "LambdaEFSMLVPCPublicSubnet2RouteTableD3A977F5"
+                        },
+                        "subnetId": {
+                          "Ref": "LambdaEFSMLVPCPublicSubnet2SubnetC37F49B6"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "LambdaEFSMLVPCPublicSubnet2RouteTableD3A977F5"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "LambdaEFSMLVPCIGW53DBFE8E"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "PrivateSubnet1": {
+                "id": "PrivateSubnet1",
+                "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.128.0/18",
+                        "vpcId": {
+                          "Ref": "LambdaEFSMLVPCA53F2950"
+                        },
+                        "availabilityZone": "cn-northwest-1a",
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet1/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "LambdaEFSMLVPCA53F2950"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "LambdaEFSMLVPCPrivateSubnet1RouteTableAF82EF35"
+                        },
+                        "subnetId": {
+                          "Ref": "LambdaEFSMLVPCPrivateSubnet1Subnet449CF111"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "LambdaEFSMLVPCPrivateSubnet1RouteTableAF82EF35"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "LambdaEFSMLVPCPublicSubnet1NATGatewayCE4674EA"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "PrivateSubnet2": {
+                "id": "PrivateSubnet2",
+                "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.192.0/18",
+                        "vpcId": {
+                          "Ref": "LambdaEFSMLVPCA53F2950"
+                        },
+                        "availabilityZone": "cn-northwest-1b",
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet2/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "LambdaEFSMLVPCA53F2950"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "LambdaEFSMLVPCPrivateSubnet2RouteTable1326E161"
+                        },
+                        "subnetId": {
+                          "Ref": "LambdaEFSMLVPCPrivateSubnet2Subnet3B55E7CF"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "LambdaEFSMLVPCPrivateSubnet2RouteTable1326E161"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "LambdaEFSMLVPCPublicSubnet1NATGatewayCE4674EA"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "IGW": {
+                "id": "IGW",
+                "path": "LambdaEfsmlStack/LambdaEFSMLVPC/IGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::InternetGateway",
+                  "aws:cdk:cloudformation:props": {
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "LambdaEfsmlStack/LambdaEFSMLVPC"
+                      }
+                    ]
+                  }
+                }
+              },
+              "VPCGW": {
+                "id": "VPCGW",
+                "path": "LambdaEfsmlStack/LambdaEFSMLVPC/VPCGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPCGatewayAttachment",
+                  "aws:cdk:cloudformation:props": {
+                    "vpcId": {
+                      "Ref": "LambdaEFSMLVPCA53F2950"
+                    },
+                    "internetGatewayId": {
+                      "Ref": "LambdaEFSMLVPCIGW53DBFE8E"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "LambdaEFSMLEC2SG": {
+            "id": "LambdaEFSMLEC2SG",
+            "path": "LambdaEfsmlStack/LambdaEFSMLEC2SG",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "LambdaEfsmlStack/LambdaEFSMLEC2SG/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "groupDescription": "LambdaEfsmlStack/LambdaEFSMLEC2SG",
+                    "groupName": "LambdaEFSMLEC2SG",
+                    "securityGroupEgress": [
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "description": "Allow all outbound traffic by default",
+                        "ipProtocol": "-1"
+                      }
+                    ],
+                    "securityGroupIngress": [
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "ipProtocol": "tcp",
+                        "fromPort": 22,
+                        "toPort": 22,
+                        "description": "Allow SSH from Internet"
+                      }
+                    ],
+                    "vpcId": {
+                      "Ref": "LambdaEFSMLVPCA53F2950"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "LambdaEFSMLLambdaSG": {
+            "id": "LambdaEFSMLLambdaSG",
+            "path": "LambdaEfsmlStack/LambdaEFSMLLambdaSG",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "LambdaEfsmlStack/LambdaEFSMLLambdaSG/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "groupDescription": "LambdaEfsmlStack/LambdaEFSMLLambdaSG",
+                    "groupName": "LambdaEFSMLLambdaSG",
+                    "securityGroupEgress": [
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "description": "Allow all outbound traffic by default",
+                        "ipProtocol": "-1"
+                      }
+                    ],
+                    "vpcId": {
+                      "Ref": "LambdaEFSMLVPCA53F2950"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "LambdaEFSMLEFSSG": {
+            "id": "LambdaEFSMLEFSSG",
+            "path": "LambdaEfsmlStack/LambdaEFSMLEFSSG",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "LambdaEfsmlStack/LambdaEFSMLEFSSG/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "groupDescription": "LambdaEfsmlStack/LambdaEFSMLEFSSG",
+                    "groupName": "LambdaEFSMLEFSSG",
+                    "securityGroupEgress": [
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "description": "Allow all outbound traffic by default",
+                        "ipProtocol": "-1"
+                      }
+                    ],
+                    "vpcId": {
+                      "Ref": "LambdaEFSMLVPCA53F2950"
+                    }
+                  }
+                }
+              },
+              "from LambdaEfsmlStackLambdaEFSMLEC2SG44C72E43:2049": {
+                "id": "from LambdaEfsmlStackLambdaEFSMLEC2SG44C72E43:2049",
+                "path": "LambdaEfsmlStack/LambdaEFSMLEFSSG/from LambdaEfsmlStackLambdaEFSMLEC2SG44C72E43:2049",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                  "aws:cdk:cloudformation:props": {
+                    "ipProtocol": "tcp",
+                    "description": "from LambdaEfsmlStackLambdaEFSMLEC2SG44C72E43:2049",
+                    "fromPort": 2049,
+                    "groupId": {
+                      "Fn::GetAtt": [
+                        "LambdaEFSMLEFSSGB43960B9",
+                        "GroupId"
+                      ]
+                    },
+                    "sourceSecurityGroupId": {
+                      "Fn::GetAtt": [
+                        "LambdaEFSMLEC2SG7F492D85",
+                        "GroupId"
+                      ]
+                    },
+                    "toPort": 2049
+                  }
+                }
+              },
+              "from LambdaEfsmlStackLambdaEFSMLLambdaSG847CFDA5:2049": {
+                "id": "from LambdaEfsmlStackLambdaEFSMLLambdaSG847CFDA5:2049",
+                "path": "LambdaEfsmlStack/LambdaEFSMLEFSSG/from LambdaEfsmlStackLambdaEFSMLLambdaSG847CFDA5:2049",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                  "aws:cdk:cloudformation:props": {
+                    "ipProtocol": "tcp",
+                    "description": "from LambdaEfsmlStackLambdaEFSMLLambdaSG847CFDA5:2049",
+                    "fromPort": 2049,
+                    "groupId": {
+                      "Fn::GetAtt": [
+                        "LambdaEFSMLEFSSGB43960B9",
+                        "GroupId"
+                      ]
+                    },
+                    "sourceSecurityGroupId": {
+                      "Fn::GetAtt": [
+                        "LambdaEFSMLLambdaSG5C0C65F7",
+                        "GroupId"
+                      ]
+                    },
+                    "toPort": 2049
+                  }
+                }
+              }
+            }
+          },
+          "efsInstance": {
+            "id": "efsInstance",
+            "path": "LambdaEfsmlStack/efsInstance",
+            "children": {
+              "InstanceRole": {
+                "id": "InstanceRole",
+                "path": "LambdaEfsmlStack/efsInstance/InstanceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "LambdaEfsmlStack/efsInstance/InstanceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "ec2.amazonaws.com.cn"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "LambdaEfsmlStack/efsInstance"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "InstanceProfile": {
+                "id": "InstanceProfile",
+                "path": "LambdaEfsmlStack/efsInstance/InstanceProfile",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
+                  "aws:cdk:cloudformation:props": {
+                    "roles": [
+                      {
+                        "Ref": "efsInstanceInstanceRole8000A1DE"
+                      }
+                    ]
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "LambdaEfsmlStack/efsInstance/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::Instance",
+                  "aws:cdk:cloudformation:props": {
+                    "availabilityZone": "cn-northwest-1a",
+                    "iamInstanceProfile": {
+                      "Ref": "efsInstanceInstanceProfile0316DB05"
+                    },
+                    "imageId": {
+                      "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+                    },
+                    "instanceType": "t2.2xlarge",
+                    "keyName": "zeyao-cn-northwest-1",
+                    "securityGroupIds": [
+                      {
+                        "Fn::GetAtt": [
+                          "LambdaEFSMLEC2SG7F492D85",
+                          "GroupId"
+                        ]
+                      }
+                    ],
+                    "subnetId": {
+                      "Ref": "LambdaEFSMLVPCPublicSubnet1Subnet2EAB2D82"
+                    },
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "LambdaEfsmlStack/efsInstance"
+                      }
+                    ],
+                    "userData": {
+                      "Fn::Base64": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "#!/bin/bash\nyum check-update -y\nyum upgrade -y\nyum install -y amazon-efs-utils\nyum install -y nfs-utils\nfile_system_id_1=",
+                            {
+                              "Ref": "LambdaEFSMLEFS85B0E724"
+                            },
+                            "\nefs_mount_point_1=/mnt/efs/fs1\nmkdir -p \"${efs_mount_point_1}\"\ntest -f \"/sbin/mount.efs\" && echo \"${file_system_id_1}:/ ${efs_mount_point_1} efs defaults,_netdev\" >> /etc/fstab || echo \"${file_system_id_1}.efs.cn-northwest-1.amazonaws.com:/ ${efs_mount_point_1} nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport,_netdev 0 0\" >> /etc/fstab\nmount -a -t efs,nfs4 defaults\necho \"Installing Python3\"\nyum install python36 -y\necho \"Installing virtual environment...\"\npython3 -m venv ${efs_mount_point_1}/lambda/pytorch\necho \"Installing PyTorch...\"\nsource ${efs_mount_point_1}/lambda/pytorch/bin/activate && pip3 install torchvision numpy\necho \"Downloading and copying model...\"\nmkdir -p ${efs_mount_point_1}/lambda/model\necho \"Changing folder permissions...\"\nchown -R 1000:1000 ${efs_mount_point_1}/lambda/"
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "LambdaEfsmlStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter"
+          },
+          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "LambdaEfsmlStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118"
+          },
+          "LambdaEFSMLEFS": {
+            "id": "LambdaEFSMLEFS",
+            "path": "LambdaEfsmlStack/LambdaEFSMLEFS",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "LambdaEfsmlStack/LambdaEFSMLEFS/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EFS::FileSystem",
+                  "aws:cdk:cloudformation:props": {
+                    "fileSystemTags": [
+                      {
+                        "key": "Name",
+                        "value": "LambdaEfsmlStack/LambdaEFSMLEFS"
+                      }
+                    ],
+                    "provisionedThroughputInMibps": 1024,
+                    "throughputMode": "provisioned"
+                  }
+                }
+              },
+              "EfsMountTarget1": {
+                "id": "EfsMountTarget1",
+                "path": "LambdaEfsmlStack/LambdaEFSMLEFS/EfsMountTarget1",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EFS::MountTarget",
+                  "aws:cdk:cloudformation:props": {
+                    "fileSystemId": {
+                      "Ref": "LambdaEFSMLEFS85B0E724"
+                    },
+                    "securityGroups": [
+                      {
+                        "Fn::GetAtt": [
+                          "LambdaEFSMLEFSSGB43960B9",
+                          "GroupId"
+                        ]
+                      }
+                    ],
+                    "subnetId": {
+                      "Ref": "LambdaEFSMLVPCPrivateSubnet1Subnet449CF111"
+                    }
+                  }
+                }
+              },
+              "EfsMountTarget2": {
+                "id": "EfsMountTarget2",
+                "path": "LambdaEfsmlStack/LambdaEFSMLEFS/EfsMountTarget2",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EFS::MountTarget",
+                  "aws:cdk:cloudformation:props": {
+                    "fileSystemId": {
+                      "Ref": "LambdaEFSMLEFS85B0E724"
+                    },
+                    "securityGroups": [
+                      {
+                        "Fn::GetAtt": [
+                          "LambdaEFSMLEFSSGB43960B9",
+                          "GroupId"
+                        ]
+                      }
+                    ],
+                    "subnetId": {
+                      "Ref": "LambdaEFSMLVPCPrivateSubnet2Subnet3B55E7CF"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "EfsAccessPoint": {
+            "id": "EfsAccessPoint",
+            "path": "LambdaEfsmlStack/EfsAccessPoint",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "LambdaEfsmlStack/EfsAccessPoint/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EFS::AccessPoint",
+                  "aws:cdk:cloudformation:props": {
+                    "fileSystemId": {
+                      "Ref": "LambdaEFSMLEFS85B0E724"
+                    },
+                    "posixUser": {
+                      "uid": "1000",
+                      "gid": "1000"
+                    },
+                    "rootDirectory": {
+                      "creationInfo": {
+                        "ownerGid": "1000",
+                        "ownerUid": "1000",
+                        "permissions": "777"
+                      },
+                      "path": "/lambda"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "Region": {
+            "id": "Region",
+            "path": "LambdaEfsmlStack/Region"
+          },
+          "InstancePublicIp": {
+            "id": "InstancePublicIp",
+            "path": "LambdaEfsmlStack/InstancePublicIp"
+          }
+        }
+      }
+    }
+  }
+}

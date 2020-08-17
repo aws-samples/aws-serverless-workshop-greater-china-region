@@ -43,7 +43,7 @@ AWS 无服务器沉浸日动手实验（AWS 中国区）
   涉及到的服务有 AWS Lambda，EFS, EC2。
 
 * Lab13 借助 Lambda 函数导出 DynamoDB 表存储为 CSV 格式并存储到 S3 桶
-  利用 Lambda 函数扫描 DynamoDB 表并将其导出为 CSV 格式存储到 S3 桶。该方案可用于定时将 DynamoDB 表注入到 S3 数据湖或者导出到基于 CSV 格式的第三方分析服务。该方案采用无服务器的方式，无需 AWS Data Pipeline的创建或者 EMR群集以及Hive external table的创建和维护。
+  利用 Lambda 函数扫描 DynamoDB 表并将其导出为 CSV 格式存储到 S3 桶。该方案可用于定时将 DynamoDB 表注入到 S3 数据湖或者导出到基于 CSV 格式的第三方分析服务。该方案采用无服务器的方式，无需 AWS Data Pipeline的创建或者 EMR 群集以及 Hive external table 的创建和维护。
   涉及到的服务有 AWS Lambda，DynamoDB, S3。
 
 * Others Labs  

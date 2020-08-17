@@ -1,0 +1,39 @@
+{
+  "name": "lambda_efsml",
+  "version": "0.1.0",
+  "bin": {
+    "lambda_efsml": "bin/lambda_efsml.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.56.0",
+    "@types/jest": "^25.2.1",
+    "@types/node": "10.17.5",
+    "jest": "^25.5.0",
+    "ts-jest": "^25.3.1",
+    "aws-cdk": "1.56.0",
+    "ts-node": "^8.1.0",
+    "typescript": "~3.7.2"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-apigateway": "^1.56.0",
+    "@aws-cdk/aws-cloudformation": "1.56.0",
+    "@aws-cdk/aws-ec2": "1.56.0",
+    "@aws-cdk/aws-efs": "1.56.0",
+    "@aws-cdk/aws-iam": "1.56.0",
+    "@aws-cdk/aws-lambda": "1.56.0",
+    "@aws-cdk/core": "1.56.0",
+    "@aws-cdk/custom-resources": "1.56.0",
+    "bufferutil": "^4.0.1",
+    "canvas": "^2.6.1",
+    "npm-check-updates": "^7.0.2",
+    "npm-install-peers": "^1.2.1",
+    "source-map-support": "^0.5.16",
+    "utf-8-validate": "^5.0.2"
+  }
+}

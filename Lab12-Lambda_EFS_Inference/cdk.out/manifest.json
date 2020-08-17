@@ -1,0 +1,1260 @@
+{
+  "version": "5.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "LambdaEfsmlStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://150784960321/cn-northwest-1",
+      "properties": {
+        "templateFile": "LambdaEfsmlStack.template.json"
+      },
+      "metadata": {
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCA53F2950",
+            "trace": [
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1156:21)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCPublicSubnet1Subnet2EAB2D82",
+            "trace": [
+              "new Subnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1478:20)",
+              "new PublicSubnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1692:5)",
+              "availabilityZones.forEach (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1336:32)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1318:28)",
+              "Vpc.createSubnets (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1313:12)",
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1185:10)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCPublicSubnet1RouteTableB9C33CC0",
+            "trace": [
+              "new Subnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1495:19)",
+              "new PublicSubnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1692:5)",
+              "availabilityZones.forEach (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1336:32)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1318:28)",
+              "Vpc.createSubnets (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1313:12)",
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1185:10)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCPublicSubnet1RouteTableAssociation3BA6647B",
+            "trace": [
+              "new Subnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1501:5)",
+              "new PublicSubnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1692:5)",
+              "availabilityZones.forEach (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1336:32)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1318:28)",
+              "Vpc.createSubnets (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1313:12)",
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1185:10)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCPublicSubnet1DefaultRouteC02A190B",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1517:19)",
+              "Vpc.publicSubnets.forEach.publicSubnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1204:22)",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1203:46)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCPublicSubnet1EIP4557A7E5",
+            "trace": [
+              "PublicSubnet.addNatGateway (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1704:21)",
+              "NatGatewayProvider.configureNat (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:173:27)",
+              "Vpc.createNatGateways (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1288:14)",
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1210:14)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCPublicSubnet1NATGatewayCE4674EA",
+            "trace": [
+              "PublicSubnet.addNatGateway (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1702:17)",
+              "NatGatewayProvider.configureNat (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:173:27)",
+              "Vpc.createNatGateways (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1288:14)",
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1210:14)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCPublicSubnet2SubnetC37F49B6",
+            "trace": [
+              "new Subnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1478:20)",
+              "new PublicSubnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1692:5)",
+              "availabilityZones.forEach (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1336:32)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1318:28)",
+              "Vpc.createSubnets (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1313:12)",
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1185:10)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCPublicSubnet2RouteTableD3A977F5",
+            "trace": [
+              "new Subnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1495:19)",
+              "new PublicSubnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1692:5)",
+              "availabilityZones.forEach (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1336:32)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1318:28)",
+              "Vpc.createSubnets (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1313:12)",
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1185:10)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCPublicSubnet2RouteTableAssociationEB2A168F",
+            "trace": [
+              "new Subnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1501:5)",
+              "new PublicSubnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1692:5)",
+              "availabilityZones.forEach (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1336:32)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1318:28)",
+              "Vpc.createSubnets (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1313:12)",
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1185:10)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/PublicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCPublicSubnet2DefaultRouteBA315B14",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1517:19)",
+              "Vpc.publicSubnets.forEach.publicSubnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1204:22)",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1203:46)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCPrivateSubnet1Subnet449CF111",
+            "trace": [
+              "new Subnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1478:20)",
+              "new PrivateSubnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1730:5)",
+              "availabilityZones.forEach (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1341:33)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1318:28)",
+              "Vpc.createSubnets (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1313:12)",
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1185:10)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCPrivateSubnet1RouteTableAF82EF35",
+            "trace": [
+              "new Subnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1495:19)",
+              "new PrivateSubnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1730:5)",
+              "availabilityZones.forEach (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1341:33)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1318:28)",
+              "Vpc.createSubnets (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1313:12)",
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1185:10)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCPrivateSubnet1RouteTableAssociationA50C135C",
+            "trace": [
+              "new Subnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1501:5)",
+              "new PrivateSubnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1730:5)",
+              "availabilityZones.forEach (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1341:33)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1318:28)",
+              "Vpc.createSubnets (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1313:12)",
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1185:10)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCPrivateSubnet1DefaultRoute1F300AAA",
+            "trace": [
+              "PrivateSubnet.addRoute (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1563:19)",
+              "NatGatewayProvider.configureSubnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:186:12)",
+              "NatGatewayProvider.configureNat (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:179:12)",
+              "Vpc.createNatGateways (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1288:14)",
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1210:14)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCPrivateSubnet2Subnet3B55E7CF",
+            "trace": [
+              "new Subnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1478:20)",
+              "new PrivateSubnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1730:5)",
+              "availabilityZones.forEach (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1341:33)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1318:28)",
+              "Vpc.createSubnets (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1313:12)",
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1185:10)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCPrivateSubnet2RouteTable1326E161",
+            "trace": [
+              "new Subnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1495:19)",
+              "new PrivateSubnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1730:5)",
+              "availabilityZones.forEach (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1341:33)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1318:28)",
+              "Vpc.createSubnets (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1313:12)",
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1185:10)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCPrivateSubnet2RouteTableAssociation3C7A25AD",
+            "trace": [
+              "new Subnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1501:5)",
+              "new PrivateSubnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1730:5)",
+              "availabilityZones.forEach (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1341:33)",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1318:28)",
+              "Vpc.createSubnets (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1313:12)",
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1185:10)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/PrivateSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCPrivateSubnet2DefaultRouteEC1BC3EF",
+            "trace": [
+              "PrivateSubnet.addRoute (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1563:19)",
+              "NatGatewayProvider.configureSubnet (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:186:12)",
+              "NatGatewayProvider.configureNat (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:179:12)",
+              "Vpc.createNatGateways (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1288:14)",
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1210:14)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCIGW53DBFE8E",
+            "trace": [
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1192:19)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLVPC/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLVPCVPCGW9AA7EFEC",
+            "trace": [
+              "new Vpc (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1198:19)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:16:17)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLEC2SG": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "Ignoring Egress rule since 'allowAllOutbound' is set to true; To add customize rules, set allowAllOutbound=false on the SecurityGroup",
+            "trace": [
+              "ConstructNode.addWarning (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/core/lib/construct-compat.ts:423:22)",
+              "SecurityGroup.addEgressRule (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:407:17)",
+              "other.connections._securityGroupRules.forEachAndForever.rule (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:131:23)",
+              "ReactiveList.forEachAndForever (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:267:7)",
+              "_securityGroups.forEachAndForever.securityGroup (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:130:45)",
+              "ReactiveList.forEachAndForever (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:267:7)",
+              "Connections.allowTo (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:129:26)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:37:34)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          },
+          {
+            "type": "aws:cdk:warning",
+            "data": "Ignoring Egress rule since 'allowAllOutbound' is set to true; To add customize rules, set allowAllOutbound=false on the SecurityGroup",
+            "trace": [
+              "ConstructNode.addWarning (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/core/lib/construct-compat.ts:423:22)",
+              "SecurityGroup.addEgressRule (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:407:17)",
+              "other.connections._securityGroupRules.forEachAndForever.rule (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:131:23)",
+              "ReactiveList.forEachAndForever (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:267:7)",
+              "_securityGroups.forEachAndForever.securityGroup (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:130:45)",
+              "ReactiveList.forEachAndForever (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:267:7)",
+              "Connections.allowTo (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:129:26)",
+              "Connections.allowFrom (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:161:25)",
+              "Connections.allowDefaultPortFrom (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:203:10)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:77:20)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLEC2SG/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLEC2SG7F492D85",
+            "trace": [
+              "new SecurityGroup (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:370:26)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:22:30)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLLambdaSG": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "Ignoring Egress rule since 'allowAllOutbound' is set to true; To add customize rules, set allowAllOutbound=false on the SecurityGroup",
+            "trace": [
+              "ConstructNode.addWarning (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/core/lib/construct-compat.ts:423:22)",
+              "SecurityGroup.addEgressRule (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:407:17)",
+              "other.connections._securityGroupRules.forEachAndForever.rule (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:131:23)",
+              "ReactiveList.forEachAndForever (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:267:7)",
+              "_securityGroups.forEachAndForever.securityGroup (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:130:45)",
+              "ReactiveList.forEachAndForever (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:267:7)",
+              "Connections.allowTo (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:129:26)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:38:37)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLLambdaSG/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLLambdaSG5C0C65F7",
+            "trace": [
+              "new SecurityGroup (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:370:26)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:27:33)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLEFSSG/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLEFSSGB43960B9",
+            "trace": [
+              "new SecurityGroup (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:370:26)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:32:30)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLEFSSG/from LambdaEfsmlStackLambdaEFSMLEC2SG44C72E43:2049": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLEFSSGfromLambdaEfsmlStackLambdaEFSMLEC2SG44C72E432049E3A4AD76",
+            "trace": [
+              "SecurityGroup.addIngressRule (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:85:7)",
+              "SecurityGroup.addIngressRule (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:387:13)",
+              "other.connections._securityGroupRules.forEachAndForever.rule (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:154:23)",
+              "ReactiveList.forEachAndForever (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:267:7)",
+              "_securityGroups.forEachAndForever.securityGroup (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:153:45)",
+              "ReactiveList.forEachAndForever (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:267:7)",
+              "Connections.allowFrom (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:152:26)",
+              "Connections.allowTo (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:138:25)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:37:34)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLEFSSG/from LambdaEfsmlStackLambdaEFSMLLambdaSG847CFDA5:2049": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLEFSSGfromLambdaEfsmlStackLambdaEFSMLLambdaSG847CFDA52049665DA3B5",
+            "trace": [
+              "SecurityGroup.addIngressRule (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:85:7)",
+              "SecurityGroup.addIngressRule (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:387:13)",
+              "other.connections._securityGroupRules.forEachAndForever.rule (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:154:23)",
+              "ReactiveList.forEachAndForever (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:267:7)",
+              "_securityGroups.forEachAndForever.securityGroup (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:153:45)",
+              "ReactiveList.forEachAndForever (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:267:7)",
+              "Connections.allowFrom (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:152:26)",
+              "Connections.allowTo (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:138:25)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:38:37)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/efsInstance/InstanceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "efsInstanceInstanceRole8000A1DE",
+            "trace": [
+              "new Role (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-iam/lib/role.ts:318:18)",
+              "new Instance (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/instance.ts:272:31)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:41:19)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/efsInstance/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "efsInstanceInstanceProfile0316DB05",
+            "trace": [
+              "new Instance (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/instance.ts:277:24)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:41:19)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/efsInstance/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "efsInstance69FDCEE3",
+            "trace": [
+              "new Instance (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/instance.ts:312:21)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:41:19)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter",
+            "trace": [
+              "Function.fromStringParameterAttributes (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ssm/lib/parameter.ts:327:9)",
+              "Function.valueForTypedStringParameter (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ssm/lib/parameter.ts:397:17)",
+              "AmazonLinuxImage.getImage (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/machine-image.ts:231:37)",
+              "new Instance (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-ec2/lib/instance.ts:282:44)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:41:19)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLEFS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLEFS85B0E724",
+            "trace": [
+              "new FileSystem (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.ts:247:24)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:56:16)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLEFS/EfsMountTarget1": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLEFSEfsMountTarget178D564E7",
+            "trace": [
+              "FileSystem.subnets.subnetIds.forEach (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.ts:277:27)",
+              "Array.forEach (<anonymous>)",
+              "new FileSystem (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.ts:276:23)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:56:16)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/LambdaEFSMLEFS/EfsMountTarget2": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaEFSMLEFSEfsMountTarget252F4275D",
+            "trace": [
+              "FileSystem.subnets.subnetIds.forEach (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.ts:277:27)",
+              "Array.forEach (<anonymous>)",
+              "new FileSystem (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.ts:276:23)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:56:16)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/EfsAccessPoint/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EfsAccessPoint787A4929",
+            "trace": [
+              "new AccessPoint (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/@aws-cdk/aws-efs/lib/access-point.ts:150:22)",
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:63:28)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/Region": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Region",
+            "trace": [
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:128:5)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaEfsmlStack/InstancePublicIp": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InstancePublicIp",
+            "trace": [
+              "new LambdaEfsmlStack (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/lib/lambda_efsml-stack.ts:129:5)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/bin/lambda_efsml.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Module.m._compile (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "main (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/zeyao/Documents/AWSLab/venv/lambdaefs/lambda-efs-inference/LambdaEFSML/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:701:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)",
+              "Module.load (internal/modules/cjs/loader.js:600:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:539:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:531:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:754:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "runtime": {
+    "libraries": {
+      "@aws-cdk/core": "1.56.0",
+      "@aws-cdk/cx-api": "1.56.0",
+      "@aws-cdk/cloud-assembly-schema": "1.56.0",
+      "@aws-cdk/aws-ec2": "1.56.0",
+      "@aws-cdk/aws-iam": "1.56.0",
+      "@aws-cdk/region-info": "1.56.0",
+      "@aws-cdk/aws-kms": "1.56.0",
+      "@aws-cdk/aws-ssm": "1.56.0",
+      "@aws-cdk/aws-logs": "1.56.0",
+      "@aws-cdk/aws-cloudwatch": "1.56.0",
+      "@aws-cdk/aws-s3": "1.56.0",
+      "@aws-cdk/aws-events": "1.56.0",
+      "@aws-cdk/aws-efs": "1.56.0",
+      "jsii-runtime": "node.js/v10.15.3"
+    }
+  }
+}

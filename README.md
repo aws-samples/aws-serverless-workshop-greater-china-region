@@ -34,6 +34,10 @@ AWS 无服务器沉浸日动手实验（AWS 中国区）
   利用 CDK 部署和更新一个无服务器的应用  
   涉及到的服务有 AWS Lambda，Amazon API Gateway，Amazon Dynamodb，Amazon CloudWatch，Amazon SNS。在 AWS 日常运维中，推荐使用 CDK 进行基础设施管理，CDK 基于 CloudFormation 现已支持大部分的 AWS 服务。
 
+* Lab10 无服务器服务架构下基于Amazon EventBridge的事件分发架构
+  利用SAM框架实现将DynamoDB流所触发的更新事件转发到Amazon EventBridge事件总线，同时利用AWS SQS实现发送失败消息的存储
+  涉及到的主要服务有AWS Lambda，Amazon EventBridge，Amazon Dynamodb，Amazon SQS
+
 * Lab12 Lambda_EFS_Inference Lambda 借助 EFS 实现模型推理  
   Lambda 函数通过 EFS 文件系统挂载大文件，实现机器学习推理场景。同时，借助 Provisioned Concurrency 特性，去除函数冷启动，极大提升推理响应时间。  
   涉及到的服务有 AWS Lambda，EFS, EC2。

@@ -38,6 +38,10 @@ AWS 无服务器沉浸日动手实验（AWS 中国区）
   利用SAM框架实现将DynamoDB流所触发的更新事件转发到Amazon EventBridge事件总线，同时利用AWS SQS实现发送失败消息的存储
   涉及到的主要服务有AWS Lambda，Amazon EventBridge，Amazon Dynamodb，Amazon SQS
 
+* Lab12 Lambda_EFS_Inference Lambda 借助 EFS 实现模型推理  
+  Lambda 函数通过 EFS 文件系统挂载大文件，实现机器学习推理场景。同时，借助 Provisioned Concurrency 特性，去除函数冷启动，极大提升推理响应时间。  
+  涉及到的服务有 AWS Lambda，EFS, EC2。
+
 * Others Labs  
   与 Lab1 采用类似的无服务器架构，创建您的第一个 AWS LAMBDA 函数，创建 Serverless 架构的调查问卷表单，通过流量转移安全部署 AWS LAMBDA 函数。  
   利用 Lambda 做 Redshift 数据注入。  

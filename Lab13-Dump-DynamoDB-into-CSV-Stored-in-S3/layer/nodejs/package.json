@@ -1,0 +1,9 @@
+{
+  "name": "ddb2csv-lambda",
+  "description": "Lambda function dump DynamoDB into CSV format",
+  "version": "0.1.0",
+  "dependencies": {
+    "dynamodb-marshaler": "^2.0.0",
+    "papaparse": "^5.2.0"
+  }
+}

@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "minimist": "file:node_modules/minimist",
     "wechat-api": "^1.35.1"
   }
 }

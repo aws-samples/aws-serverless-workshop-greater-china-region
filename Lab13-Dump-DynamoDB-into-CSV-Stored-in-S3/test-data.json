@@ -1,0 +1,6 @@
+{
+    "tablename": "Movies",
+    "s3bucket": "serverless-hands-on",
+    "filename": "Movies-export.csv",
+    "action": "dump"
+}

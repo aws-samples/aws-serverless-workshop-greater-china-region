@@ -1,0 +1,72 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: ddb2csv-lambda # NOTE: update this with your service name
+#app: your-app-name
+#tenant: your-tenant-name
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  memorySize: 512
+  timeout: 600
+  stage: ${opt:stage, 'dev'} # Set the default stage used. Default is dev
+  region: cn-north-1
+  endpointType: REGIONAL
+  role: arn:aws-cn:iam::876820548815:role/lambda_basic_execution
+  apiName: ddb2csv-lambda-api # Use a custom name for the API Gateway API
+
+layers:
+  commonLibs:
+    path: layer                         # required, path to layer contents on disk
+    name: ${self:service}-ddb2csv-lambda-layer    # optional, Deployed Lambda layer name
+    description: dynamodb-marshaler-2.0.0+ papaparse-4.1.4+  # optional, Description to publish to AWS
+    compatibleRuntimes:                         # optional, a list of runtimes this layer is compatible with
+      - nodejs10.x
+    licenseInfo: MIT License                    # optional, a string specifying license information.  TODO: Update to your preferred license.
+    allowedAccounts:                            # optional, a list of AWS account IDs allowed to access this layer. * for all. TODO: Update to your preferred accounts.
+      - '*'
+
+package:
+  individually: true
+  include:
+    - handler.js
+
+functions:
+  Ddb2Csv:
+    handler: handler.hello
+    layers:
+      - {Ref: CommonLibsLambdaLayer}  # Note the reference name is always the CamelCase version of the layer name with LambdaLayer suffix.
+    events:
+      - http:
+          path: ddb2csv
+          method: post
+    environment:
+      inRegion: cn-north-1
+      writeChunk: 500000
+      inAction: describe
+      inTableName: Movies
+      outS3Bucket: s3://serverless-hands-on/results/Movies
+      outFileName: Movies-export.csv
+
+resources:
+  Resources:
+    Ddb2CsvLambdaFunction:  # Note the reference name is always the CamelCase version of the layer name with LambdaLayer suffix.
+      Type: AWS::Lambda::Function
+      Properties:
+        MemorySize: 512
+        Timeout: 600

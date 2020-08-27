@@ -4,6 +4,7 @@
 
 - 安装 Node.js LTS(比如 12.x)
 - 安装 AWS CLI，并`configure`你的aws account
+- 安装 Docker Engine(比如19.03.x)
 
 ## 部署方式
 

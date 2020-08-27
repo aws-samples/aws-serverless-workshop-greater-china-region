@@ -1,8 +1,11 @@
 import * as cdk from '@aws-cdk/core';
 import * as dynamodb from '@aws-cdk/aws-dynamodb';
+import * as iam from '@aws-cdk/aws-iam';
 import * as sfn from '@aws-cdk/aws-stepfunctions';
 import * as tasks from '@aws-cdk/aws-stepfunctions-tasks';
 import * as lambda from '@aws-cdk/aws-lambda';
+import * as lambda_python from '@aws-cdk/aws-lambda-python';
+import * as s3_assets from '@aws-cdk/aws-s3-assets';
 import * as sns from '@aws-cdk/aws-sns';
 import * as sns_sub from '@aws-cdk/aws-sns-subscriptions';
 import * as path from 'path';
@@ -37,6 +40,34 @@ export class ServerlessWorkshopLab6Stack extends cdk.Stack {
       indexName: 'lottery_serial-index',
       partitionKey: { name: 'lottery_serial', type: dynamodb.AttributeType.NUMBER },
     });
+
+    const employeesJson = new s3_assets.Asset(this, 'EmployeeMockData', {
+      path: path.join(__dirname, '../../request-items.json'),
+    });
+    const loadMockDataHandler = new lambda_python.PythonFunction(this, 'DynamoDBLoadMockData', {
+      entry: path.join(__dirname, '../dynamodb-load-data'), 
+      index: 'index.py',
+      runtime: lambda.Runtime.PYTHON_3_8,
+      handler: 'handler',
+      timeout: cdk.Duration.minutes(3),
+    });
+    // workaround for new synthesis toolkit
+    loadMockDataHandler.addToRolePolicy(new iam.PolicyStatement({
+        actions: ['kms:Decrypt', 'kms:DescribeKey'],
+        effect: iam.Effect.ALLOW,
+        resources: ['*'],
+    }));
+    employeesJson.grantRead(loadMockDataHandler);
+    lotteryEmployeeTable.grantWriteData(loadMockDataHandler);
+    const customDynamoDBLoading = new cdk.CustomResource(this, 'CustomResource', {
+      serviceToken: loadMockDataHandler.functionArn,
+      resourceType: 'Custom::DynamodbLoadData',
+      properties: {
+        BucketName: employeesJson.s3BucketName,
+        ObjectKey: employeesJson.s3ObjectKey,
+      },
+    });
+    customDynamoDBLoading.node.addDependency(lotteryEmployeeTable);
 
     // create step Lambda functions
     const lambdaCodeAsset = lambda.Code.fromAsset(path.join(__dirname, '../../'), {

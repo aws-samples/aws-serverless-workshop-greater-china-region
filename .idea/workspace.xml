@@ -2,33 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f6e7260-ce3a-45e0-a7c2-41274495c8be" name="Default Changelist" comment="init">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/com/lht/Item.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/com/sample/ClickStreamProcess.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/aws-java-sdk-core-1.11.576.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/aws-java-sdk-kinesis-1.11.576.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/aws-java-sdk-personalizeevents-1.11.576.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/aws-lambda-java-core-1.2.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/aws-lambda-java-events-2.2.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/commons-codec-1.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/commons-logging-1.1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/hamcrest-core-1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/httpclient-4.5.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/httpcore-4.4.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/ion-java-1.0.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/jackson-annotations-2.6.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/jackson-core-2.6.7.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/jackson-databind-2.6.7.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/jackson-dataformat-cbor-2.6.7.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/jmespath-java-1.11.576.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/joda-time-2.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/json-simple-1.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/ClickStreamProcessFunction/lib/junit-4.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/.aws-sam/build/template.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/kinesis-lambda-personalize.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/target/classes/com/lht/Item.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/target/classes/com/sample/ClickStreamProcess.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kinesis-Lambda-Personalize-bak/target/test-classes/PersonalizeEventTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab11-Provision-Concurrency/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Lab11-Provision-Concurrency/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/Lab11-Kinesis-Lambda-Personalize/target/" />
     <ignored path="$PROJECT_DIR$/Lab11-Provision-Concurrency/PCTestFunction/target/" />
@@ -39,7 +14,32 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Lab11-Provision-Concurrency/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="36">
+                <caret line="2" column="54" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="278">
+                <caret line="37" column="54" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,9 +57,9 @@
         <option value="$PROJECT_DIR$/Lab11-Kinesis-Lambda-Personalize/template.yaml" />
         <option value="$PROJECT_DIR$/Lab11-Kinesis-Lambda-Personalize/.gitignore" />
         <option value="$PROJECT_DIR$/Lab11-Kinesis-Lambda-Personalize/README.md" />
-        <option value="$PROJECT_DIR$/Lab11-Provision-Concurrency/README.md" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Lab11-Provision-Concurrency/README.md" />
       </list>
     </option>
   </component>
@@ -92,6 +92,11 @@
               <item name="aws-serverless-workshop-greater-china-region" type="b2602c69:ProjectViewProjectNode" />
               <item name="aws-serverless-workshop-greater-china-region" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="aws-serverless-workshop-greater-china-region" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aws-serverless-workshop-greater-china-region" type="462c0819:PsiDirectoryNode" />
+              <item name="Lab11-Provision-Concurrency" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -101,7 +106,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="add_unversioned_files" value="$PROJECT_DIR$/Lab11-Provision-Concurrency/.aws-sam/build/template.yaml" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1599461721809" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1599461958092" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -201,13 +206,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.3073066" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.3452722" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info id="aws.explorer" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.32891566" />
@@ -288,16 +294,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lab11-Provision-Concurrency/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="36">
-            <caret line="2" column="156" selection-start-line="2" selection-end-line="2" selection-end-column="156" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lab11-Provision-Concurrency/.aws-sam/build/template.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -309,16 +305,6 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="-10" />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="335">
-            <caret line="40" selection-start-line="40" selection-end-line="40" />
-          </first_editor>
           <second_editor />
         </state>
       </provider>
@@ -385,6 +371,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="278">
+            <caret line="37" column="54" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab11-Provision-Concurrency/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="36">
+            <caret line="2" column="54" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

@@ -34,6 +34,10 @@ AWS 无服务器沉浸日动手实验（AWS 中国区）
   利用 CDK 部署和更新一个无服务器的应用  
   涉及到的服务有 AWS Lambda，Amazon API Gateway，Amazon Dynamodb，Amazon CloudWatch，Amazon SNS。在 AWS 日常运维中，推荐使用 CDK 进行基础设施管理，CDK 基于 CloudFormation 现已支持大部分的 AWS 服务。
 
+* Lab11 预配置并发&结合AutoScaling实现自动扩展
+本项目用于测试Lambda的预配置并发功能，以及结合Autoscaling实现预配置并发的自动扩展,具体细节[参考博客](https://amazonaws-china.com/cn/blogs/china/introduction-to-lambda-pre-configured-concurrency/)
+
+
 * Others Labs  
   与 Lab1 采用类似的无服务器架构，创建您的第一个 AWS LAMBDA 函数，创建 Serverless 架构的调查问卷表单，通过流量转移安全部署 AWS LAMBDA 函数。  
   利用 Lambda 做 Redshift 数据注入。  

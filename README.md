@@ -38,7 +38,7 @@ AWS 无服务器沉浸日动手实验（AWS 中国区）
   利用SAM框架实现将DynamoDB流所触发的更新事件转发到Amazon EventBridge事件总线，同时利用AWS SQS实现发送失败消息的存储
   涉及到的主要服务有AWS Lambda，Amazon EventBridge，Amazon Dynamodb，Amazon SQS
 
-** *Lab11 预配置并发&结合AutoScaling实现自动扩展
+*Lab11 预配置并发&结合AutoScaling实现自动扩展
   本项目用于测试Lambda的预配置并发功能，以及结合Autoscaling实现预配置并发的自动扩展,具体细节[参考博客](https://amazonaws-china.com/cn/blogs/china/introduction-to-lambda-pre-configured-concurrency/)
 
 * Lab12 Lambda_EFS_Inference Lambda 借助 EFS 实现模型推理  

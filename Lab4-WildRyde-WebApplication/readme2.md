@@ -54,7 +54,7 @@ AWS Lambda 将运行您的代码以动态响应HTTP请求。在此步骤中，�
 2. 选择“创建函数”
 3. 选择“从头开始创作”，并填入一下内容  
 o	名称：RequestUnicorn  
-o	运行语言：Node.js 6.10  
+o	运行语言：Node.js 12.x  
 o	角色：选择现有角色  
 o	现有角色：WildRydesLamdba  
 4. 填入完成后，点击“创建函数”

@@ -1,0 +1,6 @@
+#!/bin/sh
+set -exuo pipefail
+cd ${LAMBDA_TASK_ROOT:-.}
+
+./lambda-spring-cloud-function-graalvm -Dlogging.level.org.springframework=DEBUG
+#./lambda-spring-cloud-function-graalvm

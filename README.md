@@ -48,7 +48,10 @@ AWS 无服务器沉浸日动手实验（AWS 中国区）
 * Lab13 借助 Lambda 函数导出 DynamoDB 表存储为 CSV 格式并存储到 S3 桶
   利用 Lambda 函数扫描 DynamoDB 表并将其导出为 CSV 格式存储到 S3 桶。该方案可用于定时将 DynamoDB 表注入到 S3 数据湖或者导出到基于 CSV 格式的第三方分析服务。该方案采用无服务器的方式，无需 AWS Data Pipeline的创建或者 EMR 群集以及 Hive external table 的创建和维护。
   涉及到的服务有 AWS Lambda，DynamoDB, S3。
-
+  
+* Lab14 通过使用GraalVM编译，提升Spring Boot Function框架项目在Lambda上的冷启动性能
+  使用GraalVM将Spring Boot Function应用编译为本机镜像，编译后的应用为独立的可执行文件,并通过Lambda的自定义runtime进行部署，执行环境也无需安装JVM，Spring Boot Function的冷启动时间也有了大幅的减少。此外在提升应用的相应性能的同时，也降低了Lambda的使用内存。
+  
 * Others Labs  
   与 Lab1 采用类似的无服务器架构，创建您的第一个 AWS LAMBDA 函数，创建 Serverless 架构的调查问卷表单，通过流量转移安全部署 AWS LAMBDA 函数。  
   利用 Lambda 做 Redshift 数据注入。  
